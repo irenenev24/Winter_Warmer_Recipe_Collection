@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <h3 class="center-align">Add Recipe</h3>    
+    <h5 class="center-align">Add your favourite recipes here.</h5>
+
+
 <div class="row">
     <div class="input-field col m8 offset-m2">
         <form action="{{ url_for('add_recipes') }}" method="POST" name="addRecipe" id="addRecipe">
@@ -16,19 +20,19 @@
                 <br>
             <div class="form-group">
                 <div class="controls">
-                <i class="fas fa-pencil-alt"></i> <label class="form-field-description">Recipe Name</label>
+                <i class="fas fa-pencil-alt"></i> <label class="form-field-description" for="recipe_name">Recipe Name</label>
                 <input class="form-control" id="recipe_name" name="recipe_name" type="text" required placeholder="Add a name for your recipe" minlength="100" maxlength="100">
                 </div>
             </div>            
             <div class="form-group">
                 <div class="controls">
-                <i class="far fa-images"></i> <label class="form-field-description">Recipe Image</label>
+                <i class="far fa-images"></i> <label class="form-field-description" for="image_link">Recipe Image</label>
                 <input class="form-control" id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here">
                 </div>
             </div>
             <div class="form-group">
                 <div class="controls">
-                    <i class="far fa-edit"></i> <label class="form-field-description">Recipe Description</label>
+                    <i class="far fa-edit"></i> <label class="form-field-description" for="recipe_description">Recipe Description</label>
                 <input type="text" class="form-control" id="recipe_description" name="recipe_description" maxlength="1000" placeholder="Please add a brief description of your dish">
                 </div>
             </div>
@@ -41,8 +45,8 @@
               </div>
               <div class="form-group">
                     <div class="controls">
-                        <i class="fas fa-utensils"></i> <label for="textarea2">Cooking Method</label>
-                        <textarea id="textarea2" class="materialize-textarea" data-length="1000" rows="10" placeholder="Add cooking method here"></textarea>
+                        <i class="fas fa-utensils"></i> <label for="recipe_method">Cooking Method</label>
+                        <textarea id="recipe_method" name="recipe_method" class="materialize-textarea" data-length="1000" rows="10" placeholder="Add cooking method here"></textarea>
                     </div>
                   </div>
             <button type="submit" class="btn btn-success" id="sendMessageButton">Submit Recipe</button>
@@ -51,23 +55,5 @@
     </div>
 </div>
 </div>
-
-
-<div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="input_text" type="text" data-length="10">
-          <label for="input_text">Input text</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s8">
-          <textarea id="textarea2" class="materialize-textarea" data-length="100"></textarea>
-          <label for="textarea2">Textarea</label>
-        </div>
-      </div>
-    </form>
-  </div>
 
 {% endblock %}
