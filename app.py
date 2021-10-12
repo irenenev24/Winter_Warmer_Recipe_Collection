@@ -25,11 +25,6 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
-@app.route("/add_recipes")
-def add_recipes():
-    categories = mongo.db.categories.find()
-    return render_template("add_recipe.html")
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -50,6 +45,11 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Account Created Successfully")
     return render_template("register.html")    
+
+
+@app.route("/add_recipes")
+def add_recipes():
+    return render_template("add_recipe.html")
 
 
 if __name__ == "__main__":
