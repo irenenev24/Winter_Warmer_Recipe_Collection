@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<!--View of recipe-->
+<h2>
+    {{ recipe.recipe_name}}
+</h2> 
+
+<h3>Description</h3>
+<p>{{ recipe.recipe_description }}</p>
+
+<h4>Ingredients</h4>
+<p>{{ recipe.recipe_ingredients }}</p>
+
+<h4>Method</h4>
+<p>{{ recipe.recipe_method }}</p>
+
+<h5>Created by: {{ user }}</h5>
+
+
+<a class="waves-effect waves-light btn">Edit Recipe</a>
+<a class="waves-effect waves-light btn">Save Recipe</a>
+<a class="waves-effect waves-light btn">Delete Recipe</a>
+
+
+{% endblock %}

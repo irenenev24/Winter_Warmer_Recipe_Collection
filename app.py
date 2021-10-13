@@ -68,6 +68,15 @@ def add_recipes():
     return render_template("add_recipe.html", categories=categories)
 
 
+# Route to view_recipe page, providing data for the selected recipe
+@app.route("/read_recipes", methods=["GET", "POST"])
+def read_recipe(recipe_id):
+    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("read_recipe.html",
+                           recipe=the_recipe,
+                           page_title="Read Recipe") 
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
