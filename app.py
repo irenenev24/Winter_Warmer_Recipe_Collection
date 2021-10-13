@@ -51,14 +51,15 @@ def register():
 def add_recipes():
     # to post to categories in DB
     if request.method == "POST":
-        recipe = {
+        recipes = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method"),
             "created_by": session["user"]
         }
-        mongo.db.recipe.insert_one(request.form.to_dict(recipe))
+        mongo.db.recipes.insert_one(request.form.to_dict(recipes))
         # Message shows when recipe is sucessfully added.
         flash("Recipe Sucessfully Added, Thank You!")
         # Redirect back to Recipe page
