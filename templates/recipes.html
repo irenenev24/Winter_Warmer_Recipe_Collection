@@ -2,21 +2,47 @@
 {% block content %}
 
 <h2>Recipes</h2>
-    <ul>
-    {%  for recipe in recipes %}
-    <li>
-        <div class="text-shadow">
-        <strong>{{ recipe.recipe_name }}</strong>
+
+ 
+<!--Card taken from Materialize-->
+{%  for recipe in recipes %}
+<div class="container">
+<div class="row">
+    <div class="col  m8 offset-m2">
+      <div class="card">
+        <div class="card-title center">
+        <div class="card-image">
+            <div class="col-md-3 recipe-image">
+                <img class="img-fluid rounded" src="https://realfood.tesco.com/media/images/Seven-grain-porridge-LGH-2be12108-b3ab-48a4-b07a-b87770754a92-0-1400x919.jpg" alt="">
+            </div>
+            <h2><span class="">{{ recipe.recipe_name }}</span></h2>
         </div>
-        <div class="">
-        <strong>{{ recipe.category_name }}</strong>
-        <p>{{ recipe.recipe_description }}</p>
-        <p>{{ recipe.recipe_ingredients }}</p>
-        <p>{{ recipe.recipe_method }}</p>
-        <p>{{ recipe.recipe_image }}</p>
-        <p><em>by: {{ recipe.created_by }}</em></p>
         </div>
-    </li>    
+        <div class="card-content">
+            <h4>Description:</h4>
+                <p>{{ recipe.recipe_description }}</p>
+        <div class="center">
+            <button>Read Recipe</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+   
     {% endfor %}
-    </ul>
+    
 {% endblock %}    
+<div class="card-content">
+    <h4>Description:</h4>
+        <p>{{ recipe.recipe_description }}</p>
+    <h3>Ingredients:</h3>
+        <p>{{ recipe.recipe_ingredients }}</p>
+    <br>
+    <h4>Method:</h4>
+        <p>{{ recipe.recipe_method }}</p>
+    </div>
+    <div class="card-footer">
+        <p><em>by: {{ recipe.created_by }}</em></p>
+</div>
