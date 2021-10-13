@@ -47,8 +47,22 @@ def register():
     return render_template("register.html")    
 
 
-@app.route("/add_recipes")
+@app.route("/add_recipes", methods=["GET", "POST"])
 def add_recipes():
+    # to post to categories in DB
+    if request.method == "POST":
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_method": request.form.get("recipe_method"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipe.insert_one(request.form.to_dict(recipe))
+        # Message shows when recipe is sucessfully added.
+        flash("Recipe Sucessfully Added, Thank You!")
+        # Redirect back to Recipe page
+        return redirect(url_for("get_recipes"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
