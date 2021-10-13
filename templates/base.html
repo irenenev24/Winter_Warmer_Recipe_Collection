@@ -13,7 +13,7 @@
     <!--to access block css styles across all templates-->
     {% block styles %}
     {% endblock %}
-    <title>Winter Warmer Recipes</title>
+    <title>Winter Warmer</title>
 </head>
 <body>
     <header>
@@ -26,7 +26,8 @@
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Catergories</a></li>
-                <li><a href="{{ url_for('add_recipes') }}">Recipes</a></li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
                 <li><a href="#">Log In</a></li>
                 <li><a href="#">Log Out</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -38,7 +39,8 @@
               <li><h4 class="center-align light-blue-text">Winter Warmers</h4></li>
               <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
               <li><a href="#">Catergories</a></li>
-              <li><a href="{{ url_for('add_recipes') }}">Recipes</a></li>
+              <li><a href="#">Recipes</a></li>
+              <li><a href="{{ url_for('add_recipes') }}">Add Recipe</a></li>
               <li><a href="#">Log In</a></li>
               <li><a href="#">Log Out</a></li>
               <li><a href="{{ url_for('register') }}">Register</a></li>

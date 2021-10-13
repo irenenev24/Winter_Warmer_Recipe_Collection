@@ -22,7 +22,23 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("index.html", recipes=recipes)
+
+
+# Route to view_recipe page, providing data for the selected recipe
+@app.route("/view_recipe/<recipe_id>")
+def view_recipe(recipe_id):
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("view_recipe.html",
+                           recipe=the_recipe,
+                           page_title="View Recipe")
+
+
+                           
+@app.route("/read_recipe")
+def read_recipes():
+    recipes = mongo.db.recipes.find()
+    return render_template("read_recipe.html", recipes=recipes)    
 
 
 @app.route("/register", methods=["GET", "POST"])
