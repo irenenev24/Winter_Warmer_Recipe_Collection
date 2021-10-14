@@ -3,7 +3,7 @@
 * {box-sizing:border-box}
 
 body {
-    background-color: rgb(243, 247, 247);
+    background-color: rgb(216, 233, 233);
 }
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0 ,0 , 0.5);
@@ -26,7 +26,14 @@ body {
   font-family: "Lobster", sans-serif;
 }
 
-
+.logo {
+  height: 65px;
+  width: 120px;
+}
+.logo-home-page {
+  height: 660px;
+  width: 400px;
+}
 
 
 /* Slideshow taken from W3Schools and edited */
