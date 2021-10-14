@@ -19,10 +19,9 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template("index.html", recipes=recipes)   
+@app.route("/home")
+def home():
+    return render_template("index.html", home=home)   
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -62,18 +61,21 @@ def add_recipes():
         # Message shows when recipe is sucessfully added.
         flash("Recipe Sucessfully Added, Thank You!")
         # Redirect back to Recipe page
-        return redirect(url_for("read_recipe", recipe_id=inserted_recipe.inserted_id))
+        return redirect(url_for("read_recipe", 
+        recipe_id=inserted_recipe.inserted_id))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
+
 
 
 # Route to read_recipe page, providing data for the selected recipe
 @app.route("/read_recipe/<recipe_id>", methods=["GET"])
 def read_recipe(recipe_id):
-    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("read_recipe.html",
                            recipe=the_recipe,
                            page_title="Read Recipe") 
+                         
 
 
 if __name__ == "__main__":

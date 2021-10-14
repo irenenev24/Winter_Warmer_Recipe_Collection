@@ -31,14 +31,14 @@
              <div class="form-group">
                 <div class="controls">
                 <i class="far fa-images"></i> <label class="form-field-description" for="image_link">Recipe Image</label>
-                <input class="form-control" value="google.com" id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here">
+                <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here">
                 </div>
             </div>
             <!--Recipe Description-->
             <div class="form-group">
                 <div class="controls">
                     <i class="far fa-edit"></i> <label class="form-field-description" for="recipe_description">Recipe Description</label>
-                <input type="text" class="form-control" id="recipe_description" name="recipe_description" maxlength="1000" placeholder="Please add a brief description of your dish">
+                <input type="text" class="form-control" value="google.com" id="recipe_description" name="recipe_description" maxlength="1000" placeholder="Please add a brief description of your dish">
                 </div>
             </div>          
             <!--Ingredients-->
@@ -59,7 +59,7 @@
             <!--Submit Button-->
             <button type="submit" class="btn btn-success" id="sendMessageButton">Submit Recipe</button>
             <!--Cancel Button-->
-            <a class="btn btn-success" href="{{ url_for('get_recipes') }}">Cancel</a>
+            <a class="btn btn-success" href="{{ url_for('home') }}">Cancel</a>
         </form>
     </div>
 </div>
