@@ -22,23 +22,7 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("index.html", recipes=recipes)
-
-
-# Route to view_recipe page, providing data for the selected recipe
-@app.route("/view_recipe/<recipe_id>")
-def view_recipe(recipe_id):
-    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("view_recipe.html",
-                           recipe=the_recipe,
-                           page_title="View Recipe")
-
-
-                           
-@app.route("/read_recipe")
-def read_recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template("read_recipe.html", recipes=recipes)    
+    return render_template("index.html", recipes=recipes)   
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -72,20 +56,19 @@ def add_recipes():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_method": request.form.get("recipe_method"),
-            "created_by": session["user"]
+            "recipe_method": request.form.get("recipe_method")
         }
-        mongo.db.recipes.insert_one(request.form.to_dict(recipes))
+        inserted_recipe = mongo.db.recipes.insert_one(request.form.to_dict(recipes))
         # Message shows when recipe is sucessfully added.
         flash("Recipe Sucessfully Added, Thank You!")
         # Redirect back to Recipe page
-        return redirect(url_for("get_recipes"))
+        return redirect(url_for("read_recipe", recipe_id=inserted_recipe.inserted_id))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
 
-# Route to view_recipe page, providing data for the selected recipe
-@app.route("/read_recipes", methods=["GET", "POST"])
+# Route to read_recipe page, providing data for the selected recipe
+@app.route("/read_recipe/<recipe_id>", methods=["GET"])
 def read_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     return render_template("read_recipe.html",

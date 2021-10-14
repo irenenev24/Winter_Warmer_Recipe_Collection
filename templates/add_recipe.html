@@ -10,7 +10,7 @@
         <form action="{{ url_for('add_recipes') }}" method="POST" name="addRecipe" id="addRecipe">
             <!--Select Category-->
             <div class="form-group">
-                <i class="fas fa-align-center"></i> <label class="form-field-description">Select Category</label>
+                <i class="fas fa-align-center"></i> <label class="form-field-description form-title">Select Category</label>
                     <select class="form-control category-formfield" id="category_name" name="category_name">
                         <!-- Populates categories from database categories -->
                         {% for category in categories %}
@@ -23,10 +23,17 @@
             <!--Recipe Name-->
             <div class="form-group">
                 <div class="controls">
-                <i class="fas fa-pencil-alt"></i> <label class="form-field-description" for="recipe_name">Recipe Name</label>
+                <i class="fas fa-pencil-alt"></i> <label class="form-field-description form-title" for="recipe_name">Recipe Name</label>
                 <input class="form-control" id="recipe_name" name="recipe_name" type="text" required placeholder="Add a name for your recipe" minlength="0" maxlength="100">
                 </div>
             </div> 
+             <!--Recipe Image--> 
+             <div class="form-group">
+                <div class="controls">
+                <i class="far fa-images"></i> <label class="form-field-description" for="image_link">Recipe Image</label>
+                <input class="form-control" value="google.com" id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here">
+                </div>
+            </div>
             <!--Recipe Description-->
             <div class="form-group">
                 <div class="controls">
@@ -34,13 +41,6 @@
                 <input type="text" class="form-control" id="recipe_description" name="recipe_description" maxlength="1000" placeholder="Please add a brief description of your dish">
                 </div>
             </div>          
-            <!--Recipe Image--> 
-            <div class="form-group">
-                <div class="controls">
-                <i class="far fa-images"></i> <label class="form-field-description" for="image_link">Recipe Image</label>
-                <input class="form-control" id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here">
-                </div>
-            </div>
             <!--Ingredients-->
             <div class="form-group">
                 <div class="controls">

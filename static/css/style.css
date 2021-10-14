@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Lobster&family=Noto+Sans+Display:wght@300&display=swap');
+
 * {box-sizing:border-box}
 
 body {
@@ -16,8 +18,19 @@ body {
     height: 44px;
 }
 
+.controls{
+  font-size: 3em;
+}
 
-/* Slideshow container */
+.page-name {
+  font-family: "Lobster", sans-serif;
+}
+
+
+
+
+/* Slideshow taken from W3Schools and edited */
+/*Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
