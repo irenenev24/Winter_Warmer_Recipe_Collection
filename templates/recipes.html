@@ -11,7 +11,7 @@
             <div class="card-content">
                 <p>{{ recipe.recipe_description }}</p></div>
             <div class="card-action center-align">
-                <button><a href="">View Recipe</a></button>
+                <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}" class="btn btn-success">View Recipe</a>
             </div>
             </div>
         </div>
