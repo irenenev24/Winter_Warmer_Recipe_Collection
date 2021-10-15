@@ -31,6 +31,7 @@ def register():
         # Check if username already exists in DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
+
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
@@ -47,35 +48,39 @@ def register():
     return render_template("register.html")    
 
 
-@app.route("/add_recipes", methods=["GET", "POST"])
-def add_recipes():
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
     # to post to categories in DB
     if request.method == "POST":
-        recipes = {
+        recipe = {
             "category_name": request.form.get("category_name"),
+            "image_link": request.form.get("image_link"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
             "recipe_method": request.form.get("recipe_method")
         }
-        inserted_recipe = mongo.db.recipes.insert_one(request.form.to_dict(recipes))
+        mongo.db.recipes.insert_one(recipe)
         # Message shows when recipe is sucessfully added.
         flash("Recipe Sucessfully Added, Thank You!")
         # Redirect back to Recipe page
-        return redirect(url_for("home", 
-        recipe_id=inserted_recipe.inserted_id))
+        return redirect(url_for("recipes"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
 
+@app.route("/recipes")
+def recipes():
+    recipe = mongo.db.recipes.find(),
+    return render_template("recipes.html", recipe=recipe)      
 
-# Route to read_recipe page, providing data for the selected recipe
-@app.route("/read_recipe/<recipe_id>", methods=["GET"])
-def read_recipe(recipe_id):
-    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("read_recipe.html",
-                           recipe=the_recipe) 
-                         
+
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)}) 
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories) 
 
 
 if __name__ == "__main__":
