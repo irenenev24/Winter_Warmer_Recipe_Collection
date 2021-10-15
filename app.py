@@ -62,7 +62,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         # Message shows when recipe is sucessfully added.
-        flash("Recipe Sucessfully Added, Thank You!")
+        flash("Recipe Successfully Added, Thank You!")
         # Redirect back to Recipe page
         return redirect(url_for("recipes"))
 

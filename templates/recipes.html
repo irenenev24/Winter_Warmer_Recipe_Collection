@@ -1,76 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h2>Recipes</h2>
-
- 
-<!--Card taken from Materialize-->
-    {%  for recipe in recipes %}
-    <div class="container">
-    <div class="row">
-        <div class="col  m8 offset-m2">
-        <div class="card">
-            <div class="card-title center">
-            <div class="card-image">
-                <div class="col-md-3 recipe-image">
-                    <img class="img-fluid rounded" src="{{ recipe.image_link }}">
+<div class="container recipe-container">
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="card-title recipe-title">{{recipe.recipe_name}}</h2>
+                    <h5 class="card-title ingredients-heading"><i class="fas fa-info"></i>Description</h5>
+                    <p>{{recipe.description}}</p>
+                    <br>
+                    <h5 class="card-title ingredients-heading"><i class="fas fa-list-ul"></i>Ingredients</h5>
+                    {% for ingredient in recipe.ingredients %}
+                    <p>{{ingredient}}</p>
+                    {% endfor %}
+                    <br>
+                    <h5 class="card-title ingredients-heading"><i class="fas fa-clipboard-list"></i>Instructions</h5>
+                    {% for instruction in recipe.instructions %}
+                    <p>{{instruction}}</p>
+                    {% endfor %}
+                    <br>
+                    <div class="recipe-buttons">
+                        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-success">Edit Recipe</a>
+                        <a href="{{url_for('home')}}" class="btn btn-success">Home</a>
+                        <button type="button" class="right btn btn-danger" onclick="confirm_del()">Delete Recipe</button>
+                    </div>
                 </div>
-                <h2><span class="">{{ recipe.recipe_name }}</span></h2>
-            </div>
-            </div>
-            <div class="card-content">
-                <h4>Description:</h4>
-                    <p>{{ recipe.recipe_description }}</p>
-            <div class="center">
-                <button> <a href="{{ recipe.read_recipe }}"></a> Read Recipe</button>
-            </div>
             </div>
         </div>
-        </div>
     </div>
-    </div>
-
-    <!--View of recipe-->
-<img src="{{ recipes.image_link }}" alt="">
-
-<h2>{{ recipe.recipe_name}}</h2> 
-
-<h3>Description</h3>
-<p>{{ recipe.recipe_description }}</p>
-
-<h4>Ingredients</h4>
-<p>{{ recipe.recipe_ingredients }}</p>
-
-<h4>Method</h4>
-<p>{{ recipe.recipe_method }}</p>
-
-<h5>Created by: {{ user }}</h5>
-
-<!--Buttons taken from Materialize-->
-<div class="recipe-buttons">
-    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-success">Edit Recipe</a>
-    <button type="button" class="btn btn-danger" onclick="confirm_del()">Delete Recipe</button>
-    <a href="{{url_for('get_recipes')}}" class="btn btn-success">Home</a>
 </div>
-<a class="waves-effect waves-light btn">Edit Recipe</a>
-<a class="waves-effect waves-light btn">Save Recipe</a>
 
-
-<a class="waves-effect waves-light btn">Delete Recipe</a>
-    
-   
-    {% endfor %}
-    
 {% endblock %}    
-<div class="card-content">
-    <h4>Description:</h4>
-        <p>{{ recipe.recipe_description }}</p>
-    <h3>Ingredients:</h3>
-        <p>{{ recipe.recipe_ingredients }}</p>
-    <br>
-    <h4>Method:</h4>
-        <p>{{ recipe.recipe_method }}</p>
-    </div>
-    <div class="card-footer">
-        <p><em>by: {{ recipe.created_by }}</em></p>
-</div>
