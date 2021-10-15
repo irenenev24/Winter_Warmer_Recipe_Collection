@@ -21,7 +21,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("index.html", home=home)   
+    recipe = mongo.db.recipes.find(),
+    return render_template("index.html", recipe=recipe)   
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -61,7 +62,7 @@ def add_recipes():
         # Message shows when recipe is sucessfully added.
         flash("Recipe Sucessfully Added, Thank You!")
         # Redirect back to Recipe page
-        return redirect(url_for("read_recipe", 
+        return redirect(url_for("home", 
         recipe_id=inserted_recipe.inserted_id))
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
@@ -73,8 +74,7 @@ def add_recipes():
 def read_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("read_recipe.html",
-                           recipe=the_recipe,
-                           page_title="Read Recipe") 
+                           recipe=the_recipe) 
                          
 
 
