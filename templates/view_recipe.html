@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% for recipe in recipes %}
+<img src="{{ recipe.image_link }}" alt="">
+<h2> {{ recipe.recipe_name }} </h2>
+    <br><h3>{{ recipe.recipe_description }}</h3>
+    <p>{{ recipe.category_name }}</p>
+    <p>{{ recipe.recipe_ingredients }}</p>
+    <p>{{ recipe.recipe_method }}</p>
+    <h5>Created by:</h5>
+
+<button><a href="{{ url_for('/edit_recipe/<recipe_id>') }}">Edit Recipe</a></button>
+<button right>Delete Recipe</button>    
+ 
+
+  {% endfor %}
+{% endblock %}    
