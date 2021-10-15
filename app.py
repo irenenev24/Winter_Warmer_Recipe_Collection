@@ -72,15 +72,15 @@ def add_recipe():
 
 @app.route("/recipes")
 def recipes():
-    recipe = mongo.db.recipes.find(),
-    return render_template("recipes.html", recipe=recipe)      
+    recipes = mongo.db.recipes.find()
+    return render_template("recipes.html", recipes=recipes) 
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)}) 
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories) 
+    return render_template("recipes.html", categories=categories)
 
 
 if __name__ == "__main__":
