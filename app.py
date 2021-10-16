@@ -86,6 +86,23 @@ def view_recipe(recipe_id):
 # Route to edit recipes
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    # to post to categories in DB
+    if request.method == "POST":
+        submit_recipe = {
+            "category_name": request.form.get("category_name"),
+            "image_link": request.form.get("image_link"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method")
+        }
+        # To update recipe
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit_recipe)
+        # Message shows when recipe is sucessfully added.
+        flash("Recipe Successfully Updated, Thank You!")
+        # Redirect back to Recipe page
+        return redirect(url_for("recipes"))
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
