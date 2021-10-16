@@ -25,21 +25,21 @@
         <div class="form-group">
             <div class="controls">
             <i class="fas fa-pencil-alt"></i> <label class="form-field-description form-title" for="recipe_name">Recipe Name</label>
-            <input class="form-control" id="recipe_name" name="recipe_name" type="text" required placeholder="Add a name for your recipe" minlength="0" maxlength="100">
+            <input class="form-control" id="recipe_name" name="recipe_name" type="text" required placeholder="Add a name for your recipe" minlength="0" maxlength="100" value="{{ recipe.recipe_name }}">
             </div>
         </div> 
          <!--Recipe Image--> 
          <div class="form-group">
             <div class="controls">
             <i class="far fa-images"></i> <label class="form-field-description" for="image_link">Recipe Image</label>
-            <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here">
+            <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here" value="{{ recipe.image_link }}">
             </div>
         </div>
         <!--Recipe Description-->
         <div class="form-group">
             <div class="controls">
                 <i class="far fa-edit"></i> <label class="form-field-description" for="recipe_description">Recipe Description</label>
-            <input type="text" class="form-control" value="google.com" id="recipe_description" name="recipe_description" maxlength="1000" placeholder="Please add a brief description of your dish">
+            <input type="text" class="form-control" value="google.com" id="recipe_description" name="recipe_description" maxlength="1000" placeholder="Please add a brief description of your dish" value="{{ recipe.recipe_description }}">
             </div>
         </div>          
         <!--Ingredients-->
@@ -47,18 +47,18 @@
             <div class="controls">
                 <i class="fas fa-carrot"></i>
               <label for="recipe_ingredients">Ingredients</label>
-              <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea" data-length="1000" rows="10" placeholder="Add ingredients here"></textarea>
+              <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea" data-length="1000" rows="10" placeholder="Add ingredients here">{{ recipe.recipe_ingredients }}</textarea>
             </div>
         </div>
         <!--Cooking Method-->
           <div class="form-group">
                 <div class="controls">
                     <i class="fas fa-utensils"></i> <label for="recipe_method">Cooking Method</label>
-                    <textarea id="recipe_method" name="recipe_method" class="materialize-textarea" data-length="1000" rows="10" placeholder="Add cooking method here"></textarea>
+                    <textarea id="recipe_method" name="recipe_method" class="materialize-textarea" data-length="1000" rows="10" placeholder="Add cooking method here">{{ recipe.recipe_method }}</textarea>
                 </div>
               </div>
         <!--Submit Button-->
-        <button type="submit" class="btn btn-success" id="sendMessageButton">Edit Recipe</button>
+        <button type="submit" class="btn btn-success" id="sendMessageButton">Save Recipe</button>
         <!--Cancel Button-->
         <a class="btn btn-success" href="{{ url_for('home') }}">Cancel</a>
     </form>
