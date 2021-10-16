@@ -17,7 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# Route to home page
 @app.route("/")
 @app.route("/home")
 def home():
@@ -31,7 +31,7 @@ def register():
         # Check if username already exists in DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        #Warning if username already exists and redirect back to register
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
@@ -69,25 +69,26 @@ def add_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
-
+# Route to view all recipes
 @app.route("/recipes")
 def recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes) 
 
-
+# Route to view individual recipes
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("view_recipe.html",
                            recipe=the_recipe) 
 
-# fix this!!#########################################################
+
+# Route to edit recipes
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    all_categories = mongo.db.categories.find()
-    return render_template("edit_recipe.html", recipe=the_recipe)
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find()
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
 
 if __name__ == "__main__":

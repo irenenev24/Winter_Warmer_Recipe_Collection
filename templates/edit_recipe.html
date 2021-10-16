@@ -13,7 +13,11 @@
                 <select class="form-control category-formfield" id="category_name" name="category_name">
                     <!-- Populates categories from database categories -->
                     {% for category in categories %}
+                        {% if category.category_name == recipe.category_name %}
+                        <option value="{{ category.category_name }}"selected>{{ category.category_name }}</option>
+                        {% else %}
                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="category_name">Recipe Category</label>
@@ -58,9 +62,9 @@
                 </div>
               </div>
         <!--Submit Button-->
-        <button type="submit" class="btn btn-success" id="sendMessageButton">Save Recipe</button>
+        <a class="btn btn-large blue text-shadow" href="">Edit Recipe<i class="fas fa-times-edit right"></i></a>
         <!--Cancel Button-->
-        <a class="btn btn-success" href="{{ url_for('home') }}">Cancel</a>
+        <a class="btn btn-large red text-shadow right" href="{{ url_for('recipes') }}">Cancel<i class="fas fa-times-circle right"></i></a>
     </form>
 </div>
 </div>
