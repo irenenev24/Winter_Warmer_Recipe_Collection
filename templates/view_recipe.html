@@ -8,7 +8,7 @@
     <p>{{ recipe.recipe_method }}</p>
     <h5>Created by:</h5>
 
-<button><a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a></button>
-<button right>Delete Recipe</button>    
+<button><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit Recipe</a></button>
+<a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-success">Delete Recipe</a>    
  
 {% endblock %}    
