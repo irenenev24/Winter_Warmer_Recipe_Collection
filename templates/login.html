@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Create Account</h3>
+<h3 class="center-align">Log In</h3>
 <div class="row">
-<form class="row col m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+<form class="row col m8 offset-m2" method="POST" action="{{ url_for('login') }}">
     <!-- Input field for username from Materialize -->
       <div class="card-panel teal">
         <div class="row">
             <div class="input-field  col m8 offset-m2">
-                <i class="fas fa-user-plus prefix white-text"></i>
+                <i class="fas fa-user-cog prefix white-text"></i>
                 <!-- Pattern to show which characters are allowed in the username/password-->
                 <input type="text" id="username" name="username" minlength="5" maxlength="15" pattern="[a-zA-Z]{0-9}">
                 <label for="username">Username</label>
@@ -25,7 +25,7 @@
           <!-- Button to Create Account -->
           <div class="row">
               <button type="submit" class="col m8 offset-m2 btn-large text-shadow">
-                  Create Account <i class="fas fa-sign-in-alt"></i>
+                  Log In <i class="fas fa-sign-in-alt"></i>
               </button>
           </div>
         </div>
@@ -36,9 +36,10 @@
 <div class="row">
   <div class="col s12">
     <p class="center-align">
-      Already Have An Account? <a href="{{ url_for('login')}}">Sign In Here</a>
+      New Here? <a href="{{ url_for('register')}}">Create Account Here</a>
     </p>
   </div>
 </div>
+
 
 {% endblock %}
