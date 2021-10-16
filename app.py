@@ -107,7 +107,7 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find()
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
-
+# Deletes selected recipe from database.
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})

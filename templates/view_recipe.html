@@ -9,6 +9,21 @@
     <h5>Created by:</h5>
 
 <button><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit Recipe</a></button>
-<a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-success">Delete Recipe</a>    
+<a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-danger" onclick="confirm_del()">Delete Recipe</a>  
+
+<!-------Additional warning alert for the delete button. Confirm or cancel delete-->
+<script>
+    function confirm_del(){
+            var confirmation = confirm("Are you sure you want to delete this recipe? This is permanent.")
+            if (confirmation == true){
+                window.location.href="{{url_for('delete_recipe', recipe_id=recipe._id)}}";
+                alert("The recipe has successfully been deleted.");
+            }
+            else {
+                alert("The recipe has not been deleted.");
+            }
+        }
+</script>
+
  
 {% endblock %}    
