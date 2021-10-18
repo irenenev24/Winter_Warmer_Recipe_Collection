@@ -4,10 +4,22 @@
 <div class="row">
   <div class="row col m8 offset-m2">
       <div class="card-panel">
-        <h3 class="center-align light-blue">
-          {{ username }}'s profile
+        <h3 class="center-align home-title">
+          Hi {{ username }}!
         </h3>
       </div>
+      <div class="row left">
+        <div class="form-group">
+          <div class="controls">
+            <i class="fas fa-image"></i><label class="form-field-description" for="image_link"></label>
+          <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to profile image here">
+          </div>
+      </div>
+      <button type="submit" class="btn btn-success" id="sendMessageButton">Submit Recipe</button>
+            <!--Cancel Button-->
+            <a class="btn btn-success" href="{{ url_for('recipes') }}">Cancel</a>
+      </div>
+
     </div>
 </div>
 

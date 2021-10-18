@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add Recipe</h3>    
-    <h5 class="center-align">Add your favourite recipes here.</h5>
+    <h3 class="center-align home-title">Add Recipe</h3>    
+    <h5 class="center-align home-title">Add your favourite recipes here.</h5>
 
 
 <div class="row">
-    <div class="input-field col m8 offset-m2">
+    <div class="input-field col m8 offset-m2 orange darken-2">
         <form action="{{ url_for('add_recipe') }}" method="POST" name="addRecipe" id="addRecipe">
             <!--Select Category-->
-            <div class="form-group">
+            <div class="form-group amber accent-1">
                 <i class="fas fa-align-center"></i> <label class="form-field-description form-title">Select Category</label>
                     <select class="form-control category-formfield" id="category_name" name="category_name">
                         <!-- Populates categories from database categories -->
@@ -17,22 +17,20 @@
                         <option value="{{ category.catregory_name }}">{{category.category_name}}</option>
                         {% endfor %}
                     </select>
-
-                    <label for="category_name">Recipe Category</label>
                 </div>
                 <br>
                 <br>
             <!--Recipe Name-->
             <div class="form-group">
                 <div class="controls">
-                <i class="fas fa-pencil-alt"></i> <label class="form-field-description form-title" for="recipe_name">Recipe Name</label>
+                <i class="fas fa-pencil-alt"></i> <label class="form-section" for="recipe_name">Recipe Name</label>
                 <input class="form-control" id="recipe_name" name="recipe_name" type="text" required placeholder="Add a name for your recipe" minlength="0" maxlength="100">
                 </div>
             </div> 
              <!--Recipe Image--> 
              <div class="form-group">
                 <div class="controls">
-                <i class="far fa-images"></i> <label class="form-field-description flow-text" for="image_link">Recipe Image</label>
+                <i class="far fa-images"></i> <label class="form-field-description" for="image_link">Recipe Image</label>
                 <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here">
                 </div>
             </div>

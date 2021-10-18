@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-        <nav class="nav-extended text-shadow  orange darken-2">
+        <nav class="nav-extended text-shadow orange darken-2">
             <!-- Top NavBar -->
             <div class="nav-wrapper page-name">
               <a href="{{ url_for('home') }}" class="brand-logo">
@@ -42,7 +42,7 @@
           </nav>
             <!-- Mobile Side NavBar -->
           <ul class="sidenav" id="mobile-demo">
-              <li><h4 class="center-align amber accent-1"><a href="{{ url_for('home') }}">Winter Warmers</a></h4></li>
+              <li><h4 class="center-align orange-darken-2"><a href="{{ url_for('home') }}">Winter Warmers</a></h4></li>
               <li><a href="{{ url_for('home') }}">Home</a></li>
               {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -83,7 +83,7 @@
     {% block scripts %}
     {% endblock %}
 </body>
-<footer class="page-footer  orange darken-2">
+<footer class="page-footer orange darken-2">
   <div class="container">
     <div class="row">
       <div class="col s4 center-align"><h5 class="white-text">Winter Warmer Recipes</h5>
