@@ -19,7 +19,7 @@
     <header>
         <nav class="nav-extended text-shadow amber accent-1">
             <!-- Top NavBar -->
-            <div class="nav-wrapper page-name green-text">
+            <div class="nav-wrapper page-name">
               <a href="{{ url_for('home') }}" class="brand-logo">
               <img src="static/images/logo_test.png" alt="Logo" class="logo"></a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -83,14 +83,27 @@
     {% block scripts %}
     {% endblock %}
 </body>
-<footer>
-  <div>
-    <h5>
-      Copyright Irene Neville
-    </h5>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Winter Warmer Recipes</h5>
+        <p class="grey-text text-lighten-4">Coming soon: cooking tutorials</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Useful Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="{{ url_for('get_categories') }}">Categories</a></li>
+          <li><a class="grey-text text-lighten-3" href="{{ url_for('recipes') }}">Recipes</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="social-links">
-    Social Link
+  <div class="footer-copyright">
+    <div class="container">
+    © 2021 Copyright 
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
   </div>
 </footer>
 
