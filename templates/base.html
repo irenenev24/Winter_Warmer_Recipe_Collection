@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-        <nav class="nav-extended text-shadow amber accent-1">
+        <nav class="nav-extended text-shadow  orange darken-2">
             <!-- Top NavBar -->
             <div class="nav-wrapper page-name">
               <a href="{{ url_for('home') }}" class="brand-logo">
@@ -83,28 +83,15 @@
     {% block scripts %}
     {% endblock %}
 </body>
-<footer class="page-footer">
+<footer class="page-footer  orange darken-2">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Winter Warmer Recipes</h5>
-        <p class="grey-text text-lighten-4">Coming soon: cooking tutorials</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Useful Links</h5>
+      <div class="col s4 center-align"><h5 class="white-text">Winter Warmer Recipes</h5>
+        <p class="grey-text text-lighten-4">Coming soon: cooking tutorials</p></div>
+      <div class="col s4 center-align"><h5 class="white-text">Useful Links:</h5>
         <ul>
           <li><a class="grey-text text-lighten-3" href="{{ url_for('get_categories') }}">Categories</a></li>
           <li><a class="grey-text text-lighten-3" href="{{ url_for('recipes') }}">Recipes</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    © 2021 Copyright 
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-    </div>
-  </div>
-</footer>
-
+        </ul></div>
+        <div class="col s4 center-align"><h5 class="white-text">© 2021 Copyright </h5>
 </html>
