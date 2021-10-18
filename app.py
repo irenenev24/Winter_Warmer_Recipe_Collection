@@ -24,7 +24,7 @@ def home():
     recipe = mongo.db.recipes.find(),
     return render_template("index.html", recipe=recipe)   
 
-
+# route to register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -48,7 +48,7 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
-
+# route to login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -77,6 +77,7 @@ def login():
 
     return render_template("login.html")
 
+# route to profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # to get the session user's username from DB
@@ -88,6 +89,7 @@ def profile(username):
 
     return redirect(url_for("login"))
 
+# Route to logout
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -95,7 +97,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+# Route to add recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     # to post to categories in DB
@@ -162,7 +164,7 @@ def delete_recipe(recipe_id):
     flash("Recipe Successfully Deleted")
     return redirect(url_for("recipes"))
 
-
+# route to all categories
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
