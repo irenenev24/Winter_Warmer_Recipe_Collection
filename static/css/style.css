@@ -4,7 +4,9 @@
 
 body {
     background-color: rgb(216, 233, 233);
+    color: green;
 }
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0 ,0 , 0.5);
 }
@@ -35,8 +37,7 @@ body {
   width: 400px;
 }
 
-/* Slideshow taken from W3Schools and edited */
-/*Slideshow container */
+/* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
