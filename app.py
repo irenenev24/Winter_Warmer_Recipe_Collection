@@ -157,7 +157,7 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find()
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
-# Deletes selected recipe from database.
+# Deletes selected recipe from database using unique id
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
@@ -170,7 +170,7 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
-
+# Route to add category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -182,6 +182,22 @@ def add_category():
         return redirect(url_for("get_categories"))
 
     return render_template("add_category.html")
+
+# Route to edit category using unique id
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update(
+            {"_id": ObjectId(category_id)}, submit)
+        flash("Category Siccessfully Updated, Thank You.")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.categories.find_one(
+        {"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
 
 
 if __name__ == "__main__":
