@@ -144,7 +144,6 @@ body {
 @media only screen and (max-width: 600px) {
   .logo-home-page{
     height: 300px;
-
   }
 }
 
@@ -167,4 +166,9 @@ footer {
 .card-image-view-page{
   width: 450px;
   height: 400px;
+}
+@media only screen and (max-width: 600px){
+.view-small-screen{
+  
+}
 }

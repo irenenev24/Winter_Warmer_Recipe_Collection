@@ -6,7 +6,7 @@
 
 
 <div class="row">
-    <div class="input-field col s12 m8 offset-m2 amber darken-3">
+    <div class="input-field col s12 m8 offset-m2">
         <form action="{{ url_for('add_recipe') }}" method="POST" name="addRecipe" id="addRecipe">
             <!--Select Category-->
             <div class="form-group">
@@ -39,14 +39,14 @@
             <!--Recipe Ingredients--> 
             <div class="form">
                 <h3 for="recipe_ingredients" class="form-heading"><i class="fas fa-carrot"></i>  Recipe Ingredients</h3>
-                <input type="text" id="recipe_ingredients" name="recipe_ingredients"
-                maxlength="1000"  placeholder="Please add ingredients here" required>
+                <textarea type="text" id="recipe_ingredients" name="recipe_ingredients"
+                maxlength="1000" rows="5" cols="50" placeholder="Please add ingredients here" required></textarea>
             </div>
             <!--Cooking Method--> 
             <div class="form">
                 <h3 for="recipe_method" class="form-heading"><i class="fas fa-utensils"></i>  Cooking Method</h3>
-                <input type="text" id="recipe_method" name="recipe_method"
-                maxlength="1000"  placeholder="Please add cooking method here" required>
+                <textarea type="text" id="recipe_method" name="recipe_method"
+                maxlength="1000" rows="5" cols="50" placeholder="Please add cooking method here" required></textarea>
             </div>
             <!--Submit Button-->
             <button type="submit" class="btn login" id="sendMessageButton">Submit Recipe</button>
