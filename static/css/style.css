@@ -6,7 +6,10 @@ body {
     background-color: rgb(252, 244, 188);
     color: rgb(13, 14, 13);
 }
-
+.home-title {
+  font-family: "Lobster", sans-serif;
+  font-size: 3.5em;
+}
 .home-title, .form-group{
   color:rgb(24, 114, 24);
 }
@@ -14,7 +17,7 @@ body {
    background-color: rgb(24, 114, 24);
  } 
 .text-shadow {
-    text-shadow: 2px 2px 2px rgba(0, 0 ,0 , 0.5);
+  text-shadow: 2px 2px 2px rgb(12, 12, 12);
 }
 .flashes h4 {
     line-height: 2
@@ -119,6 +122,19 @@ body {
   from {opacity: .4}
   to {opacity: 1}
 }
-.home-title {
-  font-family: "Lobster", sans-serif;
+
+/* Footer 
+footer {
+  background-color: orange;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.footer-text-shadow {
+  text-shadow: 2px 2px 2px rgb(253, 242, 242);
+}*/
+.card-image {
+  width: 250px;
+  height: 300px;
 }

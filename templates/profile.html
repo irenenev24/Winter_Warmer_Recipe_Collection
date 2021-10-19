@@ -2,22 +2,27 @@
 {% block content %}
 
 <div class="row">
-  <div class="row col m8 offset-m2">
+  <div class="row col s12 m8 offset-m2">
       <div class="card-panel">
         <h3 class="center-align home-title">
           Hi {{ username }}!
         </h3>
       </div>
-      <div class="row left">
+      <div class="row col s12 m8 offset-m2">
         <div class="form-group">
           <div class="controls">
             <i class="fas fa-image"></i><label class="form-field-description" for="image_link"></label>
-          <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to profile image here">
+          <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to profile image here. Use URL link.">
           </div>
       </div>
-      <button type="submit" class="btn btn-success" id="sendMessageButton">Submit Recipe</button>
+      <button type="submit" class="btn btn-success" id="sendMessageButton">Upload Picture</button>
             <!--Cancel Button-->
             <a class="btn btn-success" href="{{ url_for('recipes') }}">Cancel</a>
+      </div>
+      <div class="row col s12 m8 offset-m2">
+        <div class="form-group">
+            Saved recipes
+        </div>
       </div>
 
     </div>
