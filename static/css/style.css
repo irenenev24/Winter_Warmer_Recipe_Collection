@@ -5,6 +5,9 @@
 body {
     background-color: rgb(255, 254, 214);
     color: #4a536e;
+    max-width: 2000px;
+    max-height: 1000px;
+    margin: 0 auto;
 }
 .page-title {
   font-size: 3.5em;
@@ -46,7 +49,15 @@ body {
     height: 44px;
 }
 
-
+.card-image {
+  width: 250px;
+  height: 300px;
+  color: #fff;
+}
+.card-image-view-page{
+  width: 450px;
+  height: 400px;
+}
 .page-name {
   font-family: "Lobster", sans-serif;
 }
@@ -147,28 +158,19 @@ body {
   }
 }
 
-/* Footer 
+/* ---------------Footer-------------------------- */
 footer {
   background-color: orange;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
 }
 .footer-text-shadow {
   text-shadow: 2px 2px 2px rgb(253, 242, 242);
-}*/
-.card-image {
-  width: 250px;
-  height: 300px;
-  color: #fff;
 }
-.card-image-view-page{
-  width: 450px;
-  height: 400px;
+.footer-copyright{
+  padding-bottom: 5px;
 }
-@media only screen and (max-width: 600px){
-.view-small-screen{
-  
+footer h5{
+  padding-top: 14px;
 }
-}
+
+

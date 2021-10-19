@@ -8,19 +8,19 @@
           Hi {{ username }}!
         </h3>
       </div>
-      <div class="row col s12 m8 offset-m2">
+      <div class="row col s12">
         <div class="form-group">
           <div class="controls">
-            <i class="fas fa-image"></i><label class="form-field-description" for="image_link"></label>
-          <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to profile image here. Use URL link.">
+            <i class="fas fa-image"></i><label class="form-field-description" for="profile_image_link"></label>
+          <input class="form-control"  id="profile_image_link" name="profile_image_link" type="url" pattern="https://.*" placeholder="Paste link to profile image here. Use URL link.">
           </div>
       </div>
       <button type="submit" class="btn btn-success button-color" id="sendMessageButton">Upload Picture</button>
             <!--Cancel Button-->
             <a class="btn btn-cancel button-color" href="{{ url_for('recipes') }}">Cancel</a>
       </div>
-      <div class="row col s12 m8 offset-m2">
-            <i class="fas fa-utensils"></i> <label for="recipe_method">Your Recipes</label>
+      <div class="row col s12">
+            <i class="fas fa-utensils"></i> <label  class="form-heading" for="recipe_method">Your Recipes</label>
             <textarea id="recipe_method" name="recipe_method" class="materialize-textarea flow-text"></textarea>
         </div>
     </div>
