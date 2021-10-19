@@ -17,13 +17,12 @@
             <p>{{ recipe.recipe_description }}</p>
             </div>
             <div class="card-action">
-            <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}" class="button-color">View Recipe</a>
+            <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}">View Recipe</a>
             </div>
         </div>
         </div>
     </div>
     
-
     {% endfor %}
 {% endblock %}    
 

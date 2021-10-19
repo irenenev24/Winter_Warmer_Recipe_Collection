@@ -6,11 +6,11 @@
 
 
 <div class="row">
-    <div class="input-field col m8 offset-m2 orange lighten-1">
+    <div class="input-field col s12 m8 offset-m2 amber darken-3">
         <form action="{{ url_for('add_recipe') }}" method="POST" name="addRecipe" id="addRecipe">
             <!--Select Category-->
-            <div class="form-group amber accent-1">
-                <i class="fas fa-align-center"></i> <label class="form-field-description form-title">Select Category</label>
+            <div class="form-group">
+                <i class="fas fa-align-center"></i> <label class="form-field-description form-title form-heading">Select Category</label>
                     <select class="form-control category-formfield" id="category_name" name="category_name">
                         <!-- Populates categories from database categories -->
                         {% for category in categories %}
@@ -18,48 +18,40 @@
                         {% endfor %}
                     </select>
                 </div>
-                <br>
-                <br>
             <!--Recipe Name-->
-            <div class="form-group">
-                <div class="controls">
-                <i class="fas fa-pencil-alt"></i> <label class="form-section" for="recipe_name">Recipe Name</label>
-                <input class="form-control" id="recipe_name" name="recipe_name" type="text" required placeholder="Add a name for your recipe" minlength="0" maxlength="100">
-                </div>
-            </div> 
-             <!--Recipe Image--> 
-             <div class="form-group">
-                <div class="controls">
-                <i class="far fa-images"></i> <label class="form-field-description" for="image_link">Recipe Image</label>
-                <input class="form-control"  id="image_link" name="image_link" type="url" pattern="https://.*" placeholder="Paste link to recipe image here">
-                </div>
+            <div class="form">
+                <h3 for="recipe_name" class="form-heading"><i class="fas fa-pencil-alt"></i>  Recipe Name</h3>
+                <input type="text" id="recipe_name" name="recipe_name"
+                maxlength="100" placeholder="Please add a name for your dish" required>
             </div>
             <!--Recipe Description-->
-            <div class="form-group">
-                <div class="controls">
-                    <i class="far fa-edit"></i> <label class="form-field-description flow-text" for="recipe_description">Recipe Description</label>
-                <input type="text" class="form-control" id="recipe_description" name="recipe_description" maxlength="1000" placeholder="Please add a brief description of your dish">
-                </div>
-            </div>          
-            <!--Ingredients-->
-            <div class="form-group">
-                <div class="controls">
-                    <i class="fas fa-carrot"></i>
-                  <label for="recipe_ingredients">Ingredients</label>
-                  <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea flow-text" data-length="1000" rows="10" placeholder="Add ingredients here"></textarea>
-                </div>
+            <div class="form">
+                <h3 for="recipe_description" class="form-heading"><i class="far fa-edit"></i>  Recipe Description</h3>
+                <input type="text" id="recipe_description" name="recipe_description"
+                maxlength="1000" placeholder="Please add a brief description of your dish" required>
             </div>
-            <!--Cooking Method-->
-              <div class="form-group">
-                    <div class="controls">
-                        <i class="fas fa-utensils"></i> <label for="recipe_method">Cooking Method</label>
-                        <textarea id="recipe_method" name="recipe_method" class="materialize-textarea flow-text" data-length="1000" rows="10" placeholder="Add cooking method here"></textarea>
-                    </div>
-                  </div>
+            <!--Recipe Image-->
+            <div class="form">
+                <h3 for="image_link" class="form-heading"><i class="far fa-images"></i>  Recipe Image</h3>
+                <input type="text" id="image_link" name="image_link"
+                maxlength="1000" pattern="https://.*" placeholder="Please add a URL image of your dish" required>
+            </div>
+            <!--Recipe Ingredients--> 
+            <div class="form">
+                <h3 for="recipe_ingredients" class="form-heading"><i class="fas fa-carrot"></i>  Recipe Ingredients</h3>
+                <input type="text" id="recipe_ingredients" name="recipe_ingredients"
+                maxlength="1000"  placeholder="Please add ingredients here" required>
+            </div>
+            <!--Cooking Method--> 
+            <div class="form">
+                <h3 for="cooking-method" class="form-heading"><i class="fas fa-utensils"></i>  Cooking Method</h3>
+                <input type="text" id="cooking-method" name="cooking-method"
+                maxlength="1000"  placeholder="Please add cooking method here" required>
+            </div>
             <!--Submit Button-->
-            <button type="submit" class="btn btn-success" id="sendMessageButton">Submit Recipe</button>
+            <button type="submit" class="btn login" id="sendMessageButton">Submit Recipe</button>
             <!--Cancel Button-->
-            <a class="btn btn-success" href="{{ url_for('recipes') }}">Cancel</a>
+            <a class="btn btn-cancel" href="{{ url_for('recipes') }}">Cancel</a>
         </form>
     </div>
 </div>

@@ -21,7 +21,6 @@
                     {% endfor %}
                 </select>
                 <label for="category_name">Recipe Category</label>
-
             </div>
             <br>
             <br>
@@ -62,9 +61,10 @@
                 </div>
               </div>
         <!--Submit Button-->
-        <button type="submit" class="btn btn-large blue text-shadow">Save Recipe<i class="fas fa-times-edit right"></i></button>
+        button type="submit" class="btn btn-larg text-white">Save Recipe<i class="fas fa-times-edit right"></i></button>
+        <button type="submit" class="btn login" id="sendMessageButton">Submit Recipe</button>
         <!--Cancel Button-->
-        <a class="btn btn-large red text-shadow right" href="{{ url_for('recipes') }}">Cancel<i class="fas fa-times-circle right"></i></a>
+        <a class="btn btn-large btn-cancel right" href="{{ url_for('recipes') }}">Cancel<i class="fas fa-times-circle right"></i></a>
     </form>
 </div>
 </div>

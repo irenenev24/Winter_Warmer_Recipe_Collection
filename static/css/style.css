@@ -15,12 +15,24 @@ body {
 .home-title, .form-group{
   color:rgb(24, 114, 24);
 }
+.form-group {
+  font-family: "Lobster", sans-serif;
+  font-size: 1.5em;
+}
+.form-heading {
+  font-family: "Lobster", sans-serif;
+  font-size: 1.5em;
+  color: #1d8a07;
+}
 .button-color {
   background-color:rgb(24, 114, 24);
 }
  .login {
-   background-color: #a2b774;
+   background-color: rgb(24, 114, 24);
  } 
+ .btn-cancel {
+  background-color: rgb(233, 15, 15);
+ }
 .text-shadow {
   text-shadow: 2px 2px 2px rgb(12, 12, 12);
 }
@@ -33,9 +45,7 @@ body {
 .card-footer {
     height: 44px;
 }
-.controls{
-  font-size: 3em;
-}
+
 
 .page-name {
   font-family: "Lobster", sans-serif;
@@ -49,7 +59,7 @@ body {
   height: 660px;
   width: 400px;
 }
-
+/*-------------------------------Slideshow Styling-----------------------*/
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;

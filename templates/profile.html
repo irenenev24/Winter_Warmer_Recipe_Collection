@@ -17,15 +17,13 @@
       </div>
       <button type="submit" class="btn btn-success button-color" id="sendMessageButton">Upload Picture</button>
             <!--Cancel Button-->
-            <a class="btn btn-success button-color" href="{{ url_for('recipes') }}">Cancel</a>
+            <a class="btn btn-cancel button-color" href="{{ url_for('recipes') }}">Cancel</a>
       </div>
       <div class="row col s12 m8 offset-m2">
-        <div class="form-group">
-            Saved recipes
+            <i class="fas fa-utensils"></i> <label for="recipe_method">Your Recipes</label>
+            <textarea id="recipe_method" name="recipe_method" class="materialize-textarea flow-text"></textarea>
         </div>
-      </div>
-
     </div>
-</div>
+
 
 {% endblock %}
