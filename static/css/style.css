@@ -3,18 +3,23 @@
 * {box-sizing:border-box}
 
 body {
-    background-color: rgb(252, 244, 188);
-    color: rgb(13, 14, 13);
+    background-color: rgb(255, 254, 214);
+    color: #4a536e;
+}
+.page-title {
+  font-size: 3.5em;
 }
 .home-title {
   font-family: "Lobster", sans-serif;
-  font-size: 3.5em;
 }
 .home-title, .form-group{
   color:rgb(24, 114, 24);
 }
+.button-color {
+  background-color:rgb(24, 114, 24);
+}
  .login {
-   background-color: rgb(24, 114, 24);
+   background-color: #a2b774;
  } 
 .text-shadow {
   text-shadow: 2px 2px 2px rgb(12, 12, 12);
@@ -28,7 +33,6 @@ body {
 .card-footer {
     height: 44px;
 }
-
 .controls{
   font-size: 3em;
 }
@@ -56,6 +60,7 @@ body {
 /* Hide the images by default */
 .mySlides {
   display: none;
+  border-radius: 15px;
 }
 
 /* Next & previous buttons */
@@ -121,6 +126,16 @@ body {
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.logo-home-page {
+  height: 650px;
+}
+@media only screen and (max-width: 600px) {
+  .logo-home-page{
+    height: 300px;
+
+  }
 }
 
 /* Footer 

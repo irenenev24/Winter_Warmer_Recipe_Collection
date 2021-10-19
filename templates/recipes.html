@@ -1,26 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-{% for recipe in recipes %}
 
-  <div class="col s12 m7">
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="{{ recipe.image_link }}">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-            <h4 class="header">{{ recipe.recipe_name }}</h4>
-          <p>{{ recipe.recipe_description }}</p>
+    <h3 class="center-align home-title page-title">Recipes</h3>    
+    <h5 class="center-align home-title">View your favourite recipes here.</h5>
+
+    {% for recipe in recipes %}
+
+    <div class="col s12 m7">
+        <div class="card horizontal">
+        <div class="card-image">
+            <img src="{{ recipe.image_link }}">
         </div>
-        <div class="card-action">
-          <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}">View Recipe</a>
+        <div class="card-stacked">
+            <div class="card-content">
+                <h4 class="header">{{ recipe.recipe_name }}</h4>
+            <p>{{ recipe.recipe_description }}</p>
+            </div>
+            <div class="card-action">
+            <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}" class="button-color">View Recipe</a>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
-  </div>
-  
+    
 
-  {% endfor %}
+    {% endfor %}
 {% endblock %}    
 
 
