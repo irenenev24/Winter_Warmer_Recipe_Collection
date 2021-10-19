@@ -44,14 +44,14 @@
             </div>
             <!--Cooking Method--> 
             <div class="form">
-                <h3 for="cooking-method" class="form-heading"><i class="fas fa-utensils"></i>  Cooking Method</h3>
-                <input type="text" id="cooking-method" name="cooking-method"
+                <h3 for="recipe_method" class="form-heading"><i class="fas fa-utensils"></i>  Cooking Method</h3>
+                <input type="text" id="recipe_method" name="recipe_method"
                 maxlength="1000"  placeholder="Please add cooking method here" required>
             </div>
             <!--Submit Button-->
             <button type="submit" class="btn login" id="sendMessageButton">Submit Recipe</button>
             <!--Cancel Button-->
-            <a class="btn btn-cancel" href="{{ url_for('recipes') }}">Cancel</a>
+            <a class="btn btn-cancel right" href="{{ url_for('recipes') }}">Cancel</a>
         </form>
     </div>
 </div>

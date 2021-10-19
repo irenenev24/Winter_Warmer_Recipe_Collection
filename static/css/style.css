@@ -162,4 +162,9 @@ footer {
 .card-image {
   width: 250px;
   height: 300px;
+  color: #fff;
+}
+.card-image-view-page{
+  width: 450px;
+  height: 400px;
 }
