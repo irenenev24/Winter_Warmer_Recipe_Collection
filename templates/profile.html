@@ -13,8 +13,12 @@
         <p>Here you can view the recipes you have created on this site.</p>
         <div class="">
           <i class="fas fa-utensils"></i> 
-          <label class="form-heading" for="recipe_method">Your Recipes</label>
-          <textarea id="recipe_method" name="recipe_method" class="materialize-textarea flow-text"></textarea>
+          <label class="form-heading form-title" for="recipe_method">Your Recipes</label>
+          <textarea id="recipe_method" name="recipe_method" class="materialize-textarea">
+            {% for recipe in recipes %}
+              <option value="{{ recipe.created_by }}">{{ recipe.created_by }}</option>
+            {% endfor %}
+          </textarea>
         </div>
         <div>
         <p>You can also use this quick link to add recipes:</p>

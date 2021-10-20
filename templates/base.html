@@ -42,6 +42,7 @@
             <!-- Mobile Side NavBar -->
           <ul class="sidenav" id="mobile-demo">
               {% if session.user %}
+              <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     {% if session.user|lower == "admin"|lower %}
                       <li><a href="{{ url_for('get_categories') }}">Catergories</a></li>
@@ -71,12 +72,15 @@
     {% endblock%}
   </main>
   <footer class="container-fluid footer-bg center-align">
-    <div class="social-links">
-      <h5 class="footer-heading">Follow Us</h5>   
-    </div>  
-    <hr>
       <div class="footer-copyright text-center">
-        <h6 class="footer-legal"><p><small>© Irene Neville | Junior Developer | Course Project</small></p></footer></h6>
+        <div class="row s12 links home-sub-title">
+          Quick Links: <br>
+            <a class="btn login" href="{{ url_for('home') }}">Home</a>
+            <a class="btn login" href="{{ url_for('recipes') }}">Recipes</a>
+            <a class="btn login" href="{{ url_for('add_recipe') }}">Add Recipe</a>
+            <a class="btn login" href="{{ url_for('logout') }}">Logout</a>
+          </div>
+        <h4 class="footer-legal"><p><small>© Irene Neville | Junior Developer | Course Project</small></p></footer></h4>
       </div>
 </footer>
    <!--for jQuery for Materialize-->

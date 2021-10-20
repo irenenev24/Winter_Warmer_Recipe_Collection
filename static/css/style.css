@@ -176,5 +176,10 @@ footer {
 footer h5{
   padding-top: 14px;
 }
+.footer-heading {
+  font-size: 1.5em;
+  font-family: "Lobster", sans-serif;
+  color:rgb(24, 114, 24);
+}
 
 

@@ -88,7 +88,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, recipe=recipes)
 
     return redirect(url_for("login"))
 
@@ -116,6 +116,7 @@ def add_recipe():
             "recipe_method": request.form.get("recipe_method"),
             "created_by": session["user"]
         }
+        # To create recipe
         mongo.db.recipes.insert_one(recipe)
         # Message shows when recipe is sucessfully added.
         flash("Recipe Successfully Added, Thank You")

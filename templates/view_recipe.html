@@ -1,31 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
     
-<h2 class="center-align  page-title">{{ recipe.recipe_name }}</h2>    
-<h3 class="center-align home-sub-title">Created by: {{ username }}</h3>
+<h2 class="center-align  page-title">{{ recipe.recipe_name }}</h2> 
+<p class="center-align home-sub-title">{{ recipe.category_name }}</p>
 
-<div class="card mb-4">
-    <div class="card-body">
-        <div class="row">
-            <div class="col s6 view-small-screen">
-            <img src="{{ recipe.image_link }}" alt="" class="card-image-view-page view-small-screen"></div>
-            <div class="col s6">
-                <h3>{{ recipe.recipe_description }}</h3>
-                <p>{{ recipe.category_name }}</p></div>
-              <div class="col s12">
-                <h4>Ingredients</h4>
-                <p>{{ recipe.recipe_ingredients }}</p>
-                <h4>Instructions</h4>
-                <p>{{ recipe.recipe_method }}</p>
-              </div>
-              <div class="col s12">
-              <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn login" type="submit">Edit Recipe</a>
-            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-cancel right" onclick="confirm_del()">Delete Recipe</a>
-            </div>
-          </div>
-        </div>
+<h3 class="center-align home-sub-title">Created by: {{ recipe.created_by }}</h3>
+    <div class="col s12 m7">
+      <div class="card-image">
+          <img src="{{ recipe.image_link }}">
+      </div>
+      <div class="card-content">
+          <h4 class="header">{{ recipe.recipe_description }}</h4>
+      </div>
+      <div class="card-content">
+        <p>{{ recipe.recipe_ingredients }}</p>
+          <p>{{ recipe.recipe_method }}</p>
+      </div>
+      <div class="col s12">
+          <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn login" type="submit">Edit Recipe</a>
+          <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-cancel right" onclick="confirm_del()">Delete Recipe</a>
+      </div>
+      <br>
     </div>
-</div>
 <!-------Additional warning alert for the delete button. Confirm or cancel delete-->
 <script>
     function confirm_del(){
