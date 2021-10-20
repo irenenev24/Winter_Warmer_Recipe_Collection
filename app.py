@@ -118,7 +118,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         # Message shows when recipe is sucessfully added.
-        flash("Recipe Successfully Added, Thank You! {{ username }}")
+        flash("Recipe Successfully Added, Thank You")
         # Redirect back to Recipe page
         return redirect(url_for("recipes"))
 
@@ -131,6 +131,14 @@ def add_recipe():
 def recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
+
 
 
 # Route to view individual recipes
