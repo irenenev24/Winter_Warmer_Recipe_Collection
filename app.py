@@ -137,8 +137,11 @@ def recipes():
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipes.html", recipes=recipes)
-
+    if recipes:
+        return render_template("recipes.html", recipes=recipes)
+    else:
+        flash("No Results Found")
+    return redirect(url_for("recipes"))
 
 
 # Route to view individual recipes
