@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Lobster&family=Noto+Sans+Display:wght@300&display=swap');
 
-* {box-sizing:border-box}
-
+* {
+  box-sizing: border-box;
+}
 body {
-    background-color: rgb(255, 254, 214);
-    color: #4a536e;
-    max-width: 2000px;
-    max-height: 1000px;
-    margin: 0 auto;
+  background-color: rgb(255, 254, 214);
+  color: #4a536e;
+  max-width: 2000px;
+  max-height: 1000px;
+  margin: 0 auto;
 }
 .page-title {
   font-size: 3.5em;
+}
+.home-page-intro {
+  font-size: 1.5em;
+  font-family: 'Noto', sans-display;
 }
 .home-title {
   font-family: "Lobster", sans-serif;
@@ -37,11 +42,14 @@ body {
   background-color: rgb(233, 15, 15);
  }
 .text-shadow {
-  text-shadow: 2px 2px 2px rgb(12, 12, 12);
+  text-shadow: 2px 2px 2px rgb(15, 15, 15);
 }
 .flashes h4 {
-    line-height: 2
+    line-height: 1;
 }
+nav, li {
+  font-size: 1em;
+} 
 .card {
     border-radius: 15px;
 }
