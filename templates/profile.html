@@ -5,22 +5,19 @@
   <div class="row col s12 m8 offset-m2">
       <div class="card-panel">
         <h2 class="center-align page-title">
-          Welcome {{ username }}!
+          Hi {{ username }}!
         </h2>
       </div>
       <div class="home-page-intro">
-        <p>Welcome to your profile page for Winter Warmer Recipes.</p>
-        <p>Here you can view the recipes you have created on this site.</p>
-        <div class="">
-          <i class="fas fa-utensils"></i> 
-          <label class="form-heading form-title" for="recipe_method">Your Recipes</label>
-          <textarea id="recipe_method" name="recipe_method" class="materialize-textarea">
-            {% for recipe in recipes %}
-              <option value="{{ recipe.created_by }}">{{ recipe.created_by }}</option>
-            {% endfor %}
-          </textarea>
-        </div>
-        <div>
+        <p><em>{{ username }}</em>, welcome to your profile page for Winter Warmer Recipes.</p>
+        <p>We hope to provide a mix of recipes that are aimed to give you more choice. From breakfast to dinner, to drinks, we hope to provide you with everything you need to get you through the cold winter nights. Here you can also view the recipes you have posted while on this site.</p>
+      <div>
+      <div>
+        {% for recipe in recipes %}
+            <option value="{{ recipe.created_by }}">{{ recipe.created_by }}</option>
+        {% endfor %}
+      </div>
+      <div>
         <p>You can also use this quick link to add recipes:</p>
         <a class="btn login left" href="{{ url_for('add_recipe') }}">Add Recipe</a>
       </div>
