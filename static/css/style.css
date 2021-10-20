@@ -35,12 +35,15 @@ body {
 .button-color {
   background-color:rgb(24, 114, 24);
 }
- .login {
+.login {
    background-color: rgb(24, 114, 24);
  } 
- .btn-cancel {
+.btn-cancel {
   background-color: rgb(233, 15, 15);
  }
+.home-title-text-shadow {
+  text-shadow: 2px 2px 2px rgb(212, 206, 206);
+}
 .text-shadow {
   text-shadow: 2px 2px 2px rgb(15, 15, 15);
 }

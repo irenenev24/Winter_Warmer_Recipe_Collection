@@ -9,15 +9,22 @@
         <div class="input-field col s12 m8 offset-m2">
             <form action="{{url_for('edit_recipe', recipe_id=recipe._id)}}" method="POST" name="addRecipe" id="addRecipe">
                 <!--Select Category-->
-                <div class="form-group">
-                    <i class="fas fa-align-center"></i> <label class="form-field-description form-title form-heading">Select Category</label>
-                        <select class="form-control category-formfield" id="category_name" name="category_name">
-                            <!-- Populates categories from database categories -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select name="category-name" id="category-name" class="validate" required>
+                            <option value="" disabled selected>Choose Category</option>
                             {% for category in categories %}
-                            <option value="{{ category.catregory_name }}">{{category.category_name}}</option>
+                                {% if category.category_name == recipe.category_name %}
+                                    <option value="{{ category.category_name }}" selected>{{ category.category_name}}</option>
+                                {% else %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name}}</option>
+                                {% endif %}
                             {% endfor %}
                         </select>
+                        <label for="category_name"Recipe Category></label>
                     </div>
+                </div>
+                
        <!--Recipe Name-->
        <div class="form">
         <h3 for="recipe_name" class="form-heading"><i class="fas fa-pencil-alt"></i>  Recipe Name</h3>
@@ -58,3 +65,20 @@
 </div>
 
 {% endblock %}
+
+
+                
+                
+                
+                
+                
+                
+<div class="form-group">
+    <i class="fas fa-align-center"></i> <label class="form-field-description form-title form-heading">Select Category</label>
+        <select class="form-control category-formfield" id="category_name" name="category_name" class="validate" required>
+            <!-- Populates categories from database categories -->
+            {% for category in categories %}
+            <option value="{{ category.catregory_name }}">{{category.category_name}}</option>
+            {% endfor %}
+        </select>
+    </div>

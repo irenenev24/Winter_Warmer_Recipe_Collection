@@ -113,11 +113,12 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_method": request.form.get("recipe_method")
+            "recipe_method": request.form.get("recipe_method"),
+            "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
         # Message shows when recipe is sucessfully added.
-        flash("Recipe Successfully Added, Thank You!")
+        flash("Recipe Successfully Added, Thank You! {{ username }}")
         # Redirect back to Recipe page
         return redirect(url_for("recipes"))
 
@@ -151,7 +152,8 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_method": request.form.get("recipe_method")
+            "recipe_method": request.form.get("recipe_method"),
+            "created_by": session["user"]
         }
         # To update recipe
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit_recipe)
