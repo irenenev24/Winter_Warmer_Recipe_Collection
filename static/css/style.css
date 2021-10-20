@@ -12,32 +12,27 @@ body {
 }
 .page-title {
   font-size: 3.5em;
+  font-family: "Lobster", sans-serif;
+  color:rgb(24, 114, 24);
 }
 .home-page-intro {
   font-size: 1.5em;
   font-family: 'Noto', sans-display;
 }
-.home-title {
+.home-sub-title{
+  color: rgb(224, 99, 79);
   font-family: "Lobster", sans-serif;
+  font-size: 2em;
 }
-.home-title, .form-group{
+.form-group, .form-heading {
+  font-family: "Lobster", sans-serif;
+  font-size: 1.5em;
   color:rgb(24, 114, 24);
 }
-.form-group {
-  font-family: "Lobster", sans-serif;
-  font-size: 1.5em;
-}
-.form-heading {
-  font-family: "Lobster", sans-serif;
-  font-size: 1.5em;
-  color: #1d8a07;
-}
-.button-color {
+
+.button-color, .login {
   background-color:rgb(24, 114, 24);
 }
-.login {
-   background-color: rgb(24, 114, 24);
- } 
 .btn-cancel {
   background-color: rgb(233, 15, 15);
  }
@@ -72,7 +67,6 @@ nav, li {
 .page-name {
   font-family: "Lobster", sans-serif;
 }
-
 .logo {
   height: 65px;
   width: 120px;
