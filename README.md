@@ -58,6 +58,8 @@ prevent accidental deletion.
 * I want to create a user friendly area that will become more useful overtime with 
 the inclusion of more recipes and categories.
 * I want a site that is responsive across all devices for ease of use.
+* Some features are not available unless you have an admin password,
+such as categories.
 
 ### Customer Goals:
 
@@ -79,7 +81,6 @@ the inclusion of more recipes and categories.
 1. If I see a recipe I wish to use in the future 
 am I able to access the site again to use it?
 1. Can I add to this site?
-1. Can I save recipes to my profile for easy of access?
 1. Will I be able to use this on all my devices?
 1. Is this site easy to navigate to save time?
 (eg: navigation bar, search bar, categories)
@@ -98,22 +99,73 @@ am I able to access the site again to use it?
 * User can create/read/update/delete recipes.
 * Admin can create/read/update/delete recipes and categories.  
 
+## Future Features
+
+* Adding extra sections for cooking tutorials.
+* Adding sections for seasonal recipes like summer etc.
+* Ability to add saved recipes to your profile. 
+* Building on the different allergy requirements such
+as gluten, dairy free, sugar free etc.
+* Adding in christmas/easter sections and more.
+* Adding a profile picture to the profile.
+
 ### Structure
-
-
-* Multiple social media links to appeal to more users.
+1. Home page will be viewable to anyone regardless of log in status.
+1. Create Account page will allow user to create a new account with validation required 
+for username and password. Alert will show if either username or password is already in use.
+Otherwise the user will be directed to a profile page and an alert will welcome the user.
+Hi {{ user }}! Create account page also has a link to the login page for someone who 
+may already have an account.
+1. Login page will allow user to log into their account with validation required 
+for username and password. Alert will show if either username or password is incorrect.
+"Incorrect Username and/or Password"
+Otherwise the user will be directed to a profile page and an alert will welcome the user.
+Hi {{ user }}! Login page also has a link to the Create Account page for someone who 
+may not already have an account.
+1. The profile page will show Hi {{ user }}! Followed by a welcome statement.
+There is also a button thats provides a quick link to add a recipe.
+1. The Recipe page will show a search bar that is set to search by category, recipe name or keyword.
+Below this all recipes will show with an image and brief dewscription. A button will feature for
+each one with the words View Recipe.
+1. The view button will connect to a page that shows each recipe individually. Using recipe.id to select them.
+They will display on the page with the recipe name, category and created by sections highlighted 
+at the top of the page. Below will feature an image, recipe ingredients and recipe description.
+Below will be a two buttons. on for edit and one for delete. The delete button will trigger an 
+alert from JavaScript to prevent accidental deletion.
+1. The edit button will lead to a page that is pre-populated using the recipe.id
+The user will have the option to edit and submit the recipe or cancel and return to the recipe page.
+1. The Add recipe page will allow users to fill out a form to share their recipes with the other
+users of the site. The info submitted on this form will be used to prepopulate the edit recipe form.
+#### For admin use only
+1. The category page will show a list of categories which will feature an edit and a delete button.
+1. The edit button will lead to a page that lets the admin edit the category title.
+1. The delete button will lead to a page that lets the admin delete the category title. 
+The delete button will trigger an alert from JS to prevent accidental deletion.
+1. The add category page will allow admin to add new categories.
+#### Messages
+All submit/login/delete buttons will trigger flash messages.
 
 ### Skeleton
-
+#### Wireframes 
 * Nav bar featuring links to various areas in the site taken from MaterializeCss.com
 * Image carousel with a welcome paragraph about Winter Warmer Recipes and what the site aims to provide for users.
 
 * Footer with social media links, legal info.
 
 ### Surface
+#### Typography
+#### Colors
+#### Media 
+* All media used on home page from unsplash.com.
+* Logo made for me on Fiverr.com
+
+* All recipes and images submitted by the admin(myself) taken from BBC GoodFood.
 
 
 
 ## Features 
 
 ### Image Carousel
+
+### Languages Used
+- HTML5(https://en.wikipedia.org/wiki/HTML5)

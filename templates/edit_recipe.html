@@ -23,7 +23,8 @@
                          {% endfor %}
                      </select>
                  </div>
-             </div>    <!--Recipe Name-->
+             </div>
+    <!--Recipe Name-->
        <div class="form">
             <h3 class="form-heading"><i class="fas fa-pencil-alt"></i>  Recipe Name</h3>
             <input type="text" for="recipe_name" value="{{ recipe.recipe_name }}" id="recipe_name" name="recipe_name"
@@ -63,7 +64,3 @@
 </div>
 
 {% endblock %}
-
-
-recipe = mongo.db.recipes.find_one({"_id", ObjectId(recipe_id)})
-categories = mongo.db.categories.find().sort("category_name", 1)
