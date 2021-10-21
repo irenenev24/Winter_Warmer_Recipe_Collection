@@ -1,5 +1,7 @@
 # Winter Warmer Recipes
 
+![Image showing the website displayed on different screen sizes](/static/images/responsive-image-readme.png)
+
 This site is a website for winter themed recipes. 
 It is designed to be a base for people to upload and view recipes. 
 It has various different categories of recipes (eg: Breakfast, Lunch etc.)
@@ -154,18 +156,50 @@ All submit/login/delete buttons will trigger flash messages.
 
 ### Surface
 #### Typography
+* All fonts were taking from fone-awesome.
 #### Colors
 #### Media 
 * All media used on home page from unsplash.com.
 * Logo made for me on Fiverr.com
-
+[static/images/Original Logo.png]
 * All recipes and images submitted by the admin(myself) taken from BBC GoodFood.
-
+[https://www.bbcgoodfood.com/]
 
 
 ## Features 
 
-### Image Carousel
+
+## Building of site
 
 ### Languages Used
-- HTML5(https://en.wikipedia.org/wiki/HTML5)
+- [HTML5] (https://en.wikipedia.org/wiki/HTML5)
+- [CSS] (https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+#### Frameworks
+- [Google Fonts](https://fonts.google.com/)
+    Google fonts were used to import the fonts used in this site. 
+    Lobster and Noto-sans-display 
+- [Font Awesome](https://fontawesome.com/)
+    The icons used throughout the site have been taken from Font Awesome.
+- [GitHub](https://github.com/)
+    For storing project.
+- [Gitpod](https://www.gitpod.io/)
+    Used for editing my code.site code.
+- [Balsamiq](https://balsamiq.com/)
+    Used for Wireframe creation for my site.
+- [Am I responsive](http://ami.responsivedesign.is/)
+    This was used to generate the image at the top of this README.
+- [jQuery](https://jquery.com/)
+    Required for some of the elements used from Materialize.com
+- [Heroku](https://dashboard.heroku.com/apps)
+    For deployment of the application
+- [MongoDB](https://www.mongodb.com/)
+    Used to store data in the database.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+    Framework we have used for building our applications.
+
+### Testing
+
+- Contained in a seperate file [TESTING.md]
