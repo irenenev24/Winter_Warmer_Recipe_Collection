@@ -87,6 +87,8 @@ am I able to access the site again to use it?
 1. Is this site easy to navigate to save time?
 (eg: navigation bar, search bar, categories)
 
+* I feel that the site meets all of the above criteria.
+
 ### Scope
 
 * How to add recipes?.
@@ -148,11 +150,13 @@ The delete button will trigger an alert from JS to prevent accidental deletion.
 All submit/login/delete buttons will trigger flash messages.
 
 ### Skeleton
+
 #### Wireframes 
 * Nav bar featuring links to various areas in the site taken from MaterializeCss.com
 * Image carousel with a welcome paragraph about Winter Warmer Recipes and what the site aims to provide for users.
-
 * Footer with social media links, legal info.
+* Forms for adding/editing recipes and categories.
+* Forms for logging in and registering.
 
 ### Surface
 #### Typography
@@ -172,8 +176,8 @@ All submit/login/delete buttons will trigger flash messages.
 ## Building of site
 
 ### Languages Used
-- [HTML5] (https://en.wikipedia.org/wiki/HTML5)
-- [CSS] (https://en.wikipedia.org/wiki/CSS)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
@@ -205,17 +209,17 @@ All submit/login/delete buttons will trigger flash messages.
 - Contained in a seperate file [TESTING.md]
 
 ## Tested on
-Windows 10
-Microsoft Edge
-Apple Macbook Project
-Samsung Galaxy Tab A 8.0
-Various devices screens available on DevTools
+- Windows 10
+- Microsoft Edge
+- Apple Macbook Project
+- Samsung Galaxy Tab A 8.0
+- Various devices screens available on DevTools
 
 ### Deployment
 
 #### Deploy from GitHub
 
-* Sign into GitHub and access your repositories.
+- Sign into GitHub and access your repositories.
 - Select desired repository.
 - Once clicked on, this bring you to a code and deploy page which contains details of your READme.md, a description of the repository details and other info.
 - Located near the top, under the repository name is a tool bar. At the end of this bar is a settings selector.
@@ -255,7 +259,9 @@ Various devices screens available on DevTools
  - Icons from Font Awesome
  - Recipes and recipe images from BBC GoodFood.com
  - Website preview from AmIResponsive.com
- 
+ - Nav bar and some form items from Materializecss.com
+ - W3Schools image carousel.
+
 
 
 #### Acknowledgements

@@ -44,5 +44,11 @@
         </div>
         {% endfor %}
 {% endblock %}    
+if 'user' not in session:
+return redirect(url_for('login'))
+# to post to categories in DB
+recipe = mongo.db.recipes.find_one(
+{"_id": ObjectId(recipe_id)}, user=session['user'])
 
 
+.sort("category_name", 1)
