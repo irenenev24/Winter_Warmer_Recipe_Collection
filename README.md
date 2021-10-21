@@ -203,3 +203,63 @@ All submit/login/delete buttons will trigger flash messages.
 ### Testing
 
 - Contained in a seperate file [TESTING.md]
+
+## Tested on
+Windows 10
+Microsoft Edge
+Apple Macbook Project
+Samsung Galaxy Tab A 8.0
+Various devices screens available on DevTools
+
+### Deployment
+
+#### Deploy from GitHub
+
+* Sign into GitHub and access your repositories.
+- Select desired repository.
+- Once clicked on, this bring you to a code and deploy page which contains details of your READme.md, a description of the repository details and other info.
+- Located near the top, under the repository name is a tool bar. At the end of this bar is a settings selector.
+- Click on settings and scrool down to GitHub Pages. 
+- Here you will click on the dropdown menu under source. (Currently showing "None"), click on this and select "Master", click - save. Page will automatically refresh. Once refreshed, scroll down to find the link to your website high-lighted in green.
+- Click on this or copy and paste into browser to access your site.
+
+#### Run project locally
+
+- If you have a GitHub account you will need to log in. If not you will need to sign up at https://www.GitHub.com/ to access this file.
+- To run project, go to the repository for that project and click on it.
+- Click the Green button to start the repositroy. This should only be clicked once as each time it is clicked it opens a new copy of the GitHub workspace.
+- The workspace is now open to be viewed and edited locally.
+
+#### To clone repository so it can be used in different editors effectively
+
+- To clone select desired repository.
+- Once clicked on, this bring you to a code and deploy page which contains details of your READme.md, a description of the repository details and other info.
+- Located beside the green gitpod button is a button with "Code" written on it. Here you will find a drop-down menu, that when selected gives you the option to clone or download the repository file.
+
+#### To deploy to Heroku
+
+- Log into Heroku.com and create account.
+- Once logged in, select new then create new app. 
+- In the window  give your app a name and choose the region to suit your location.
+- Click create app. In the new app page select settings from the menu bar and click on config vars.
+- Update the configs to include the IP, PORT, MONGO_DBNAME, MONGO_URI and SECRET_KEY.
+- Select 'Deploy' from the above menu bar.
+- In deployment method select GitHub, enter in your repository details and connect. 
+- Enable automatic deploy.
+- Deploy branch. Takes a few minutes and when done a button will appear to 'view site' which will connect you to your site.
+
+##### Credits
+
+ - Pictures from Unsplash.com
+ - Fonts from Google fonts
+ - Icons from Font Awesome
+ - Recipes and recipe images from BBC GoodFood.com
+ - Website preview from AmIResponsive.com
+ 
+
+
+#### Acknowledgements
+
+- I would like to take this opportunity to thank my mentor Brian Macharia for all his help during this project and to Anna Gilhespy and Haley Schafer for ideas on how to complete a READMEmd.
+
+- I would also like to thank the student support team, all on the CI Slack community and everyone at Code Institute for helpful advise, videos and content.
