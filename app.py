@@ -154,7 +154,7 @@ def view_recipe(recipe_id):
 # Route to edit recipes
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-  
+  # to post categories in DB
     if request.method == "POST":
         submit_recipe = {
             "category_name": request.form.get("category_name"),
