@@ -116,4 +116,4 @@ am I able to access the site again to use it?
 
 ## Features 
 
-### Hero Image
+### Image Carousel

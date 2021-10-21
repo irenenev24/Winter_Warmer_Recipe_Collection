@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!--Page Label-->
     <h2 class="center-align page-title">Manage Categories</h2>
     <h3 class="center-align home-sub-title"></h3>
-
+<!--List of categories-->
     <div class="row">
         {% for category in categories %}
             <div class="col s12 m3">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-
+<!--JS alert to prevent accicental deletion--> 
             <script>
                 function confirm_del(){
                         let confirmation = confirm("Are you sure you want to delete this category? This is permanent.")
@@ -32,7 +32,7 @@
             </script>
         {% endfor %}
     </div>
-
+<!--Button to add category-->
     <div class="row">
         <div class="col s12 center-align">
             <a href="{{ url_for('add_category') }}" class="btn-large green">Add Category <i class="fas fa-plus-square right"></i> </a>

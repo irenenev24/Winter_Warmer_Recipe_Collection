@@ -86,8 +86,8 @@ def profile():
 
     if 'user' not in session:
         return redirect(url_for('login'))
-    recipes= mongo.db.recipes.find({'created_by': session['user']})
-    return render_template("profile.html", user=session['user'], recipe=recipes)
+    recipes = mongo.db.recipes.find({'created_by': session['user']})
+    return render_template("profile.html", user=session['user'], recipes=recipes)
 
 
 # Route to logout
@@ -121,11 +121,6 @@ def add_recipe():
         return redirect(url_for("recipes"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    print('####', flush=True)
-    print(categories, flush=True)
-    print('$$')
-    print(categories[0])
-    print('####')
     return render_template("add_recipe.html", categories=categories)
 
 
@@ -151,15 +146,17 @@ def search():
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("view_recipe.html",
-                           recipe=the_recipe)
+    return render_template("view_recipe.html", recipe=the_recipe)
 
 
 # Route to edit recipes
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    if 'user' not in session:
+        return redirect(url_for('login'))
     # to post to categories in DB
-    recipe = mongo.db.recipes.find_one_or_404({"_id": ObjectId(recipe_id)}, "created_by": session["user"])
+    recipe = mongo.db.recipes.find_one_or_404(
+        {"_id": ObjectId(recipe_id)}, user=session['user'])
     if request.method == "POST":
         submit_recipe = {
             "category_name": request.form.get("category_name"),
@@ -177,13 +174,6 @@ def edit_recipe(recipe_id):
         # Redirect back to Recipe page
         return redirect(url_for("recipes"))
 
-    
-    categories = mongo.db.categories.find()
-    print('####')
-    print(categories)
-    print('$$')
-    print(categories[0])
-    print('####')
     return render_template(
         "edit_recipe.html", recipe=recipe, categories=categories)
 

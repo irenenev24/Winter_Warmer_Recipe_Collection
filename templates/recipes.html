@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!--Page Label-->
     <h2 class="center-align page-title">View All Recipes</h2>  
     <h3 class="center-align home-sub-title">Search recipes by name, category or keyword.</h3>
     <br>  
+    <!--Search box-->
     <div class="row card-panel">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -21,6 +22,7 @@
         </form>
     </div>
     <br>  
+    <!--Recipe section-->
     <h3 class="center-align home-sub-title">View your favourite recipes here.</h3><br>  
         {% for recipe in recipes %}
 

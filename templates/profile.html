@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!--Page Label-->
 <div class="row">
   <div class="row col s12 m8 offset-m2">
       <div class="card-panel">
@@ -10,12 +10,7 @@
       </div>
       <div class="home-page-intro">
         <p><em>{{ username }}</em>, welcome to your profile page for Winter Warmer Recipes.</p>
-        <p>We hope to provide a mix of recipes that are aimed to give you more choice. From breakfast to dinner, to drinks, we hope to provide you with everything you need to get you through the cold winter nights. Here you can also view the recipes you have posted while on this site.</p>
-      <div>
-      <div>
-        {% for recipe in recipes %}
-            <option value="{{ recipe.created_by }}">{{ recipe.created_by }}</option>
-        {% endfor %}
+        <p>We hope to provide a mix of recipes that are aimed to give you more choice. From breakfast to dinner, to drinks, we hope to provide you with everything you need to get you through the cold winter nights.</p>
       </div>
       <div>
         <p>You can also use this quick link to add recipes:</p>
@@ -23,5 +18,4 @@
       </div>
     </div>
   </div>
-
 {% endblock %}

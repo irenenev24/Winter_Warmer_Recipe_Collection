@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h2 class="center-align page-title">Add Category</h2>    
-    <h3 class="center-align home-sub-title">Add your favourite recipes here.</h3>
-
-
+<!--Page Label-->
+<h2 class="center-align page-title">Add Category</h2>    
+<h3 class="center-align home-sub-title">Add your favourite recipes here.</h3>
+<!--Form to add category-->
 <div class="row">
     <div class="input-field col m8 offset-m2">
         <form action="{{ url_for('add_category') }}" method="POST" name="addRecipe" id="addRecipe">
@@ -12,7 +11,7 @@
             <div class="form-group">
                 <div class="controls">
                 <i class="fas fa-pencil-alt"></i> <label class="form-field-description form-title" for="category_name">Category Name</label>
-                <input class="form-control" id="category_name" name="category_name" type="text" class="validate" required placeholder="Add a new category here" minlength="3" maxlength="30">
+                <input class="form-control" id="category_name" name="category_name" type="text" required placeholder="Add a new category here" minlength="3" maxlength="30">
                 </div>
             </div> 
             <!--Submit Button-->
@@ -21,7 +20,6 @@
             <a class="btn btn-cancel" href="{{ url_for('get_categories') }}">Cancel</a>
         </form>
     </div>
-</div>
 </div>
 
 {% endblock %}

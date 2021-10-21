@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css" />
     <!--to load materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <!--access local css file -->
@@ -16,8 +16,8 @@
     <title>Winter Warmer</title>
 </head>
 <body>
-    <header>
-        <nav class="nav-extended text-shadow orange lighten-2">
+  <header>
+    <nav class="nav-extended text-shadow orange lighten-2">
             <!-- Top NavBar -->
             <div class="nav-wrapper page-name">
               <a href="{{ url_for('home') }}" class="brand-logo">WinterWarmers</a>
@@ -71,7 +71,7 @@
     {% block content %}
     {% endblock%}
   </main>
-  <footer class="container-fluid footer-bg center-align">
+  <footer class="container-fluid footer-bg center-align orange lighten-2">
       <div class="footer-copyright text-center">
         <div class="row s12 links home-sub-title">
           Quick Links: <br>
@@ -80,9 +80,8 @@
             <a class="btn login" href="{{ url_for('add_recipe') }}">Add Recipe</a>
             <a class="btn login" href="{{ url_for('logout') }}">Logout</a>
           </div>
-        <h4 class="footer-legal"><p><small>© Irene Neville | Junior Developer | Course Project</small></p></footer></h4>
-      </div>
-</footer>
+          </div>
+        <h4 class="footer-legal"><small>© Irene Neville | Junior Developer | Course Project</small></h4></footer>
    <!--for jQuery for Materialize-->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    <!--script tags for materialize-->
