@@ -1,42 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 <!--Page Label-->
-    <h2 class="center-align page-title">Manage Categories</h2>
-    <h3 class="center-align home-sub-title"></h3>
+<h2 class="center-align page-title">Manage Categories</h2>
+<h3 class="center-align home-sub-title"></h3>
 <!--List of categories-->
-    <div class="row">
-        {% for category in categories %}
-            <div class="col s12 m3">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title">{{ category.category_name }}</span>
-                    </div>
-                    <div class="card-action">
-                        <a href="{{ url_for('edit_category', category_id=category._id) }}">Edit</a>
-                        <a href="{{ url_for('delete_category', category_id=category._id) }}" onclick="confirm_del()">Delete</a>
-                    </div>
-                </div>
+<div class="row">
+    {% for category in categories %}
+    <div class="col s12 m3">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">{{ category.category_name }}</span>
             </div>
-<!--JS alert to prevent accicental deletion--> 
-            <script>
-                function confirm_del(){
-                        let confirmation = confirm("Are you sure you want to delete this category? This is permanent.")
-                        if (confirmation == true){
-                            window.location.href="{{url_for('delete_category', category_id=category._id)}}";
-                            alert("The category has successfully been deleted.");
-                        }
-                        else {
-                            alert("The category has not been deleted.");
-                        }
-                    }
-            </script>
-        {% endfor %}
-    </div>
-<!--Button to add category-->
-    <div class="row">
-        <div class="col s12 center-align">
-            <a href="{{ url_for('add_category') }}" class="btn-large green">Add Category <i class="fas fa-plus-square right"></i> </a>
+            <div class="card-action">
+                <a href="{{ url_for('edit_category', category_id=category._id) }}">Edit</a>
+                <a href="{{ url_for('delete_category', category_id=category._id) }}" onclick="confirm_del()">Delete</a>
+            </div>
         </div>
     </div>
-
+    <!--JS alert to prevent accicental deletion-->
+    <script>
+function confirm_del() {
+    let confirmation = confirm("Are you sure you want to delete this category? This is permanent.")
+    if (confirmation == true) {
+        window.location.href = "{{url_for('delete_category', category_id=category._id)}}";
+        alert("The category has successfully been deleted.");
+    } else {
+        alert("The category has not been deleted.");
+    }
+}
+    </script>
+    {% endfor %}
+</div>
+<!--Button to add category-->
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_category') }}" class="btn-large green">Add Category <i class="fas fa-plus-square right"></i> </a>
+    </div>
+</div>
 {% endblock %}

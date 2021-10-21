@@ -1,54 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 <!--Page Label-->
-    <h2 class="center-align page-title">View All Recipes</h2>  
-    <h3 class="center-align home-sub-title">Search recipes by name, category or keyword.</h3>
-    <br>  
-    <!--Search box-->
-    <div class="row card-panel">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa search prefix"></i>
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Recipes</label>
-                </div>
-                <div class="c0l s12 m4">
-                    <button type="submit" class="btn btn-med login" href="{{ url_for('recipes') }}">
-                        <i class="fas fa-search"></i> Search
-                    </button>
-                </div>
+<h2 class="center-align page-title">View All Recipes</h2>
+<h3 class="center-align home-sub-title">Search recipes by name, category or keyword.</h3>
+<br>
+<!--Search box-->
+<div class="row card-panel">
+    <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col s12 m8">
+                <i class="fas fa search prefix"></i>
+                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <label for="query">Search Recipes</label>
             </div>
-        </form>
-    </div>
-    <br>  
-    <!--Recipe section-->
-    <h3 class="center-align home-sub-title">View your favourite recipes here.</h3><br>  
-        {% for recipe in recipes %}
-
-        <div class="col s12 m7">
-            <div class="card horizontal">
-            <div class="card-image">
-                <img src="{{ recipe.image_link }}">
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                    <h4 class="header">{{ recipe.recipe_name }}</h4>
-                <p>{{ recipe.recipe_description }}</p>
-                </div>
-                <div class="card-action center-align">
-                <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}" class="btn btn-large login">View Recipe</a>
-                </div>
-            </div>
+            <div class="c0l s12 m4">
+                <button type="submit" class="btn btn-med login" href="{{ url_for('recipes') }}">
+                    <i class="fas fa-search"></i> Search
+                </button>
             </div>
         </div>
-        {% endfor %}
-{% endblock %}    
-if 'user' not in session:
-return redirect(url_for('login'))
-# to post to categories in DB
-recipe = mongo.db.recipes.find_one(
-{"_id": ObjectId(recipe_id)}, user=session['user'])
+    </form>
+</div>
+<br>
+<!--Recipe section-->
+<h3 class="center-align home-sub-title">View your favourite recipes here.</h3><br>
+{% for recipe in recipes %}
 
-
-.sort("category_name", 1)
+<div class="col s12 m7">
+    <div class="card horizontal">
+        <div class="card-image">
+            <img src="{{ recipe.image_link }}">
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <h4 class="header">{{ recipe.recipe_name }}</h4>
+                <p>{{ recipe.recipe_description }}</p>
+            </div>
+            <div class="card-action center-align">
+                <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}" class="btn btn-large login">View Recipe</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

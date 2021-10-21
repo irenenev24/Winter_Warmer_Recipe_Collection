@@ -92,6 +92,7 @@ def profile(username):
 
     return redirect(url_for("login"))
 
+
 # Route to logout
 @app.route("/logout")
 def logout():
@@ -154,7 +155,7 @@ def view_recipe(recipe_id):
 # Route to edit recipes
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-  # to post categories in DB
+    # to post categories in DB
     if request.method == "POST":
         submit_recipe = {
             "category_name": request.form.get("category_name"),
@@ -171,7 +172,7 @@ def edit_recipe(recipe_id):
         flash("Recipe Successfully Updated, Thank You!")
         # Redirect back to Recipe page
         return redirect(url_for("recipes"))
-        
+
     recipe = mongo.db.recipes.find_one({"_id", ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
     return render_template(

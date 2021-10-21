@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <!--Page Label-->
-<h2 class="center-align page-title">Add Category</h2>    
+<h2 class="center-align page-title">Add Category</h2>
 <h3 class="center-align home-sub-title">Add your favourite recipes here.</h3>
 <!--Form to add category-->
 <div class="row">
@@ -10,10 +10,10 @@
             <!--Recipe Name-->
             <div class="form-group">
                 <div class="controls">
-                <i class="fas fa-pencil-alt"></i> <label class="form-field-description form-title" for="category_name">Category Name</label>
-                <input class="form-control" id="category_name" name="category_name" type="text" required placeholder="Add a new category here" minlength="3" maxlength="30">
+                    <i class="fas fa-pencil-alt"></i> <label class="form-field-description form-title" for="category_name">Category Name</label>
+                    <input class="form-control" id="category_name" name="category_name" type="text" required placeholder="Add a new category here" minlength="3" maxlength="30">
                 </div>
-            </div> 
+            </div>
             <!--Submit Button-->
             <button type="submit" class="btn login" id="sendMessageButton">Add Category</button>
             <!--Cancel Button-->
@@ -21,5 +21,4 @@
         </form>
     </div>
 </div>
-
 {% endblock %}

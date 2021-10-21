@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <!--Page label-->
-<h2 class="center-align page-title">Edit Category</h2>    
+<h2 class="center-align page-title">Edit Category</h2>
 <h3 class="center-align home-sub-title">Add new categories here.</h3>
 <!--Form to edit or delete categories-->
 <div class="row">
@@ -10,10 +10,10 @@
             <!--Recipe Name-->
             <div class="form-group">
                 <div class="controls">
-                <i class="fas fa-pencil-alt"></i> <label class="form-field-description " for="category_name">Category Name</label>
-                <input class="form-control" id="category_name" name="category_name" type="text" value="{{ category.category_name }}" required placeholder="Edit the category here" minlength="0" maxlength="100">
+                    <i class="fas fa-pencil-alt"></i> <label class="form-field-description " for="category_name">Category Name</label>
+                    <input class="form-control" id="category_name" name="category_name" type="text" value="{{ category.category_name }}" required placeholder="Edit the category here" minlength="0" maxlength="100">
                 </div>
-            </div> 
+            </div>
             <!--Submit Button-->
             <button type="submit" class="btn login" id="sendMessageButton">Update Category</button>
             <!--Cancel Button-->
