@@ -163,8 +163,7 @@ def edit_recipe(recipe_id):
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_method": request.form.get("recipe_method"),
-            "created_by": session["user"]
+            "recipe_method": request.form.get("recipe_method")
         }
         # To update recipe
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit_recipe)
@@ -173,7 +172,7 @@ def edit_recipe(recipe_id):
         # Redirect back to Recipe page
         return redirect(url_for("recipes"))
 
-    recipe = mongo.db.recipes.find_one({"_id", ObjectId(recipe_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
     return render_template(
         "edit_recipe.html", recipe=recipe, categories=categories)

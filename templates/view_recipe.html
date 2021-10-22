@@ -2,22 +2,26 @@
 {% block content %}
 <!--Page Label-->
 <h2 class="center-align  page-title">{{ recipe.recipe_name }}</h2>
-<p class="center-align home-sub-title">{{ recipe.category_name }}</p>
+<h3 class="center-align home-sub-title">{{ recipe.category_name }}</h3>
 <!--To view recipe using unique recipe.id-->
-<h3 class="center-align home-sub-title">Created by: {{ recipe.created_by }}</h3>
+<p class="center-align home-sub-title">Created by: {{ recipe.created_by }}</p>
 <div class="col s12 m7">
     <div class="card-image">
-        <img src="{{ recipe.image_link }}" alt="recipe-image">
+        <img src="{{ recipe.image_link }}" alt="recipe-image" height="220" width="300">
     </div>
+    <br>
     <div class="card-content">
+        <br>
+        <br>
         <h4 class="header">{{ recipe.recipe_description }}</h4>
     </div>
     <div class="card-content">
-        <p>{{ recipe.recipe_ingredients }}</p>
-        <p>{{ recipe.recipe_method }}</p>
+        <p>INGREDIENTS:<br><br>{{ recipe.recipe_ingredients }}</p>
+        <p>INSTRUCTIONS:<br><br>{{ recipe.recipe_method }}</p>
     </div>
     <div class="col s12">
         <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn login" type="submit">Edit Recipe</a>
+        <a href="{{ url_for('recipes') }}" class="btn btn-cancel center" >Cancel</a>
         <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-cancel right" onclick="confirm_del()">Delete Recipe</a>
     </div>
     <br>

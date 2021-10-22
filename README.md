@@ -160,7 +160,7 @@ All submit/login/delete buttons will trigger flash messages.
 
 ### Surface
 #### Typography
-* All fonts were taking from fone-awesome.
+* All fonts were taking from google fonts.
 #### Colors
 #### Media 
 * All media used on home page from unsplash.com.
@@ -206,7 +206,7 @@ All submit/login/delete buttons will trigger flash messages.
 
 ### Testing
 
-- Contained in a seperate file [TESTING.md]
+- Contained in a seperate file [TEST](/TESTING.md)
 
 ## Tested on
 - Windows 10

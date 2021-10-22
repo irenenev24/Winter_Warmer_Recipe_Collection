@@ -71,9 +71,8 @@ li {
 }
 
 .card-image {
-    width: 250px;
-    height: 300px;
-    color: #fff;
+    width: 100px;
+    height: 150px;
 }
 
 .card-image-view-page {
