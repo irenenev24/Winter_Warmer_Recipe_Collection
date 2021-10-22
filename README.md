@@ -261,6 +261,14 @@ All submit/login/delete buttons will trigger flash messages.
  - Website preview from AmIResponsive.com
  - Nav bar and some form items from Materializecss.com
  - W3Schools image carousel.
+ - Code taken from videos on Code Institute.
+ - Some code ideas such as 
+  -{% for category in categories %}
+  -<option value="{{ category.category_name }}">
+  ={{ category.category_name }}</option>
+  -{% endfor %}
+  taken from https://github.com/3PU/cook-book-milestone-project
+  as shown to me by my mentor. Also used this as a reference for how to navigate through my recipe form.
 
 
 
