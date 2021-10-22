@@ -34,7 +34,7 @@
         <div class="card-stacked">
             <div class="card-content">
                 <h4 class="header">{{ recipe.recipe_name }}</h4>
-                <p>{{ recipe.recipe_description }}</p>
+                <p>{{ recipe.category_name }}<br>{{ recipe.recipe_description }}</p>
             </div>
             <div class="card-action center-align">
                 <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}" class="btn btn-large login">View Recipe</a>
