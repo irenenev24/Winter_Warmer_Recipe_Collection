@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(255, 254, 214);
+    background-color: #000/*rgb(255, 254, 214)*/;
     color: #4a536e;
     max-width: 2000px;
     max-height: 1000px;
